@@ -20,8 +20,6 @@
   <h4>Mi espacio de trabajo</h4>
 </div>
 <p align="center">
-        <img alt="ExpressJS" src="https://img.shields.io/badge/Express.js-32a852?logo=express&logoColor=%2361DAFB">
-        <img alt="Flask" src="https://img.shields.io/badge/Flask-0078D6?logo=flask&logoColor=%2361DAFB">
         <img alt="ASPDOTNET" src="https://img.shields.io/badge/ASP .NET-7d32a8?logo=dotnet&logoColor=%2361DAFB">
         <img alt="Windows 11" src="https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white">
 </p>
