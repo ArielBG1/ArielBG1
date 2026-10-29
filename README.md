@@ -56,7 +56,8 @@ App ciudadana de reciclaje con mapa interactivo, reconocimiento de materiales po
 
 <img src="https://skillicons.dev/icons?i=react,vite,tailwind,nodejs,express,postgres,tensorflow" height="36" />
 
-[![Repo](https://img.shields.io/badge/Ver_repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ArielBG1/Cyclo)
+[![Demo](https://img.shields.io/badge/Demo_en_vivo-512BD4?style=for-the-badge&logo=vercel&logoColor=white)](https://cyclo-nine.vercel.app)
+[![Repo](https://img.shields.io/badge/Repositorio-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ArielBG1/Cyclo)
 
 </td>
 </tr>
