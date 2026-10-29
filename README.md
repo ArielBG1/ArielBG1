@@ -78,6 +78,7 @@ Punto de venta e inventario para comercio minorista: lector de código de barras
 Marcación docente que valida ventana horaria, proximidad GPS (100 m) e identidad facial con anti-spoofing usando DeepFace y SQL Server. Proyecto en equipo de 6.
 
 <img src="https://skillicons.dev/icons?i=py,flask,opencv" height="36" />
+[![Repo](https://img.shields.io/badge/Ver_repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ArielBG1/sistema_marcacion_docente)
 
 </td>
 </tr>
@@ -108,7 +109,6 @@ Landing page para Torotech, la plataforma educativa del Instituto Técnico Super
 ## <img src="https://api.iconify.design/lucide/activity.svg?color=%237C6CF2" height="24" /> Estadísticas
 
 <div align="center">
-  <img height="165" src="./profile/stats.svg" alt="Estadísticas" />
   <img height="165" src="./profile/top-langs.svg" alt="Lenguajes" />
   <br/>
   <img src="https://streak-stats.demolab.com?user=ArielBG1&theme=tokyonight&hide_border=true" alt="Racha" />
