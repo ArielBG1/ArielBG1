@@ -1,37 +1,29 @@
-<hr/>
+# Hola, soy Ariel 👋
 
-<div align="center">
-  <h1>Ariel Bogado</h1>
-</div>
+**Backend Developer · C# / .NET** · Estudiante de Ingeniería Informática (UNIDA) · Paraguay
 
-<div align="center">
-<h4>
-  <img src="https://static-00.iconduck.com/assets.00/node-js-icon-1817x2048-g8tzf91e.png" width="40" title="Keew#0111">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://thinkotb.b-cdn.net/wp-content/uploads/2023/01/c-4.svg" width="40" title="Keew#0111">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://images.icon-icons.com/2699/PNG/512/python_logo_icon_168886.png" width="40" title="Keew#0111">
-</h4>
-</div>
+- 🔧 Desarrollo sistemas universitarios en .NET + PostgreSQL, incluida una integración con la API del RUE ES
+- 💼 Hago proyectos freelance: sistemas de gestión, POS e inventario
+- 🤖 Me interesa la IA aplicada: visión por computadora y agentes con modelos locales
+- 📫 arielbogadogimenez@gmail.com · [LinkedIn](https://www.linkedin.com/in/arielbogadogimenez)
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ArielBG1&show_icons=true&locale=es&layout=compact&theme=radical" alt="ovi" />
-</div>
+### Stack
 
-<br/>
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat&logo=dotnet&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=flat&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=flat&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
 
-<div align="center">
-  <h4>Mi espacio de trabajo</h4>
-</div>
-<p align="center">
-        <img alt="ASPDOTNET" src="https://img.shields.io/badge/ASP .NET-7d32a8?logo=dotnet&logoColor=%2361DAFB">
-        <img alt="Windows 11" src="https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white">
-</p>
+### Proyectos destacados
 
-<br/>
-
-<a href="#gh-dark-mode-only">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=ArielBG1&theme=github-dark&point=00000000&radius=12" alt="Contribuciones">
-</a>
-
-<div align="center">
-  <h1></h1>
-</div>
-&nbsp;
-<hr/>
+| Proyecto | Stack | Qué hace |
+|---|---|---|
+| [Sistema POS](https://github.com/ArielBG1/) | .NET 10 MVC · PostgreSQL | Ventas con código de barras, productos por peso, stock auditado, roles |
+| [Cyclo](https://github.com/ArielBG1/) | React · Express · PostGIS · TensorFlow.js | Economía circular: detección de materiales con IA, mapa y gamificación |
+| [Asistencia facial](https://github.com/ArielBG1/) | Python · OpenCV · DeepFace | Marcación docente con validación horaria, GPS y anti-spoofing |
+| [ArielBG69](https://github.com/ArielBG1/) | Java · Robocode | Robot competitivo con wave surfing y GuessFactor targeting |
