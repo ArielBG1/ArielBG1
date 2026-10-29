@@ -56,8 +56,7 @@ App ciudadana de reciclaje con mapa interactivo, reconocimiento de materiales po
 
 <img src="https://skillicons.dev/icons?i=react,vite,tailwind,nodejs,express,postgres,tensorflow" height="36" />
 
-[![Demo](https://img.shields.io/badge/Demo_en_vivo-512BD4?style=for-the-badge&logo=vercel&logoColor=white)](https://cyclo-nine.vercel.app)
-[![Repo](https://img.shields.io/badge/Repositorio-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ArielBG1/Cyclo)
+[![Repo](https://img.shields.io/badge/Ver_repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ArielBG1/Cyclo)
 
 </td>
 </tr>
@@ -82,7 +81,8 @@ Marcación docente que valida ventana horaria, proximidad GPS (100 m) e identida
 [![Repo](https://img.shields.io/badge/Ver_repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ArielBG1/sistema_marcacion_docente)
 
 </td>
-
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 ### <img src="https://api.iconify.design/lucide/ticket.svg?color=%237C6CF2" height="20" /> Soporte por tickets
