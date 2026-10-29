@@ -78,11 +78,11 @@ Punto de venta e inventario para comercio minorista: lector de código de barras
 Marcación docente que valida ventana horaria, proximidad GPS (100 m) e identidad facial con anti-spoofing usando DeepFace y SQL Server. Proyecto en equipo de 6.
 
 <img src="https://skillicons.dev/icons?i=py,flask,opencv" height="36" />
+
 [![Repo](https://img.shields.io/badge/Ver_repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ArielBG1/sistema_marcacion_docente)
 
 </td>
-</tr>
-<tr>
+
 <td width="50%" valign="top">
 
 ### <img src="https://api.iconify.design/lucide/ticket.svg?color=%237C6CF2" height="20" /> Soporte por tickets
