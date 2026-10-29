@@ -4,23 +4,23 @@
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=7C6CF2&center=true&vCenter=true&width=600&lines=Backend+Developer+%7C+C%23+%C2%B7+.NET;APIs+REST+%C2%B7+PostgreSQL+%C2%B7+SQL+Server;Frontend+con+React+%2B+Tailwind;Estudiante+de+Ingenier%C3%ADa+Inform%C3%A1tica" alt="Typing SVG" /></a>
 
-<br/>
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arielbogadogimenez)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arielbogadogimenez@gmail.com)
-![Ubicación](https://img.shields.io/badge/📍_Paraguay-1f2937?style=for-the-badge)
-![Visitas](https://komarev.com/ghpvc/?username=ArielBG1&style=for-the-badge&color=512BD4&label=VISITAS)
+<p>
+  <a href="https://www.linkedin.com/in/arielbogadogimenez"><img src="https://skillicons.dev/icons?i=linkedin" height="44" alt="LinkedIn" /></a>
+  &nbsp;
+  <a href="mailto:arielbogadogimenez@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" height="44" alt="Email" /></a>
+</p>
 
 </div>
 
-## 👨‍💻 Sobre mí
+## <img src="https://api.iconify.design/lucide/user-round.svg?color=%237C6CF2" height="24" /> Sobre mí
 
-- 🏛️ **Software Developer en UNIDA**: desarrollo y mantengo la plataforma universitaria en .NET y coordino al equipo de desarrollo
-- 💼 Hago proyectos **freelance**: sistemas de gestión, punto de venta e inventario
-- 🎓 Estudiante de 5.º año de **Ingeniería Informática**
-- 🤖 Me interesan la **IA aplicada** y los **sistemas distribuidos**
+- <img src="https://api.iconify.design/lucide/building-2.svg?color=%237C6CF2" height="16" /> **Software Developer en UNIDA**: desarrollo y mantengo la plataforma universitaria en .NET y coordino al equipo de desarrollo
+- <img src="https://api.iconify.design/lucide/briefcase.svg?color=%237C6CF2" height="16" /> Proyectos **freelance**: sistemas de gestión, punto de venta e inventario
+- <img src="https://api.iconify.design/lucide/graduation-cap.svg?color=%237C6CF2" height="16" /> Estudiante de 5.º año de **Ingeniería Informática**
+- <img src="https://api.iconify.design/lucide/brain-circuit.svg?color=%237C6CF2" height="16" /> Me interesan la **IA aplicada** y los **sistemas distribuidos**
+- <img src="https://api.iconify.design/lucide/map-pin.svg?color=%237C6CF2" height="16" /> Paraguay
 
-## 🛠️ Stack
+## <img src="https://api.iconify.design/lucide/layers.svg?color=%237C6CF2" height="24" /> Stack
 
 <table align="center">
   <tr>
@@ -45,56 +45,73 @@
   </tr>
 </table>
 
-## 🚀 Proyectos destacados
+## <img src="https://api.iconify.design/lucide/rocket.svg?color=%237C6CF2" height="24" /> Proyectos destacados
 
 <table>
 <tr>
-<td width="33%" valign="top">
+<td colspan="2">
 
-### 🛒 Sistema POS
-Punto de venta e inventario para comercio minorista: código de barras, productos por peso, compras, auditoría de stock y roles.
+### <img src="https://api.iconify.design/lucide/recycle.svg?color=%2310B981" height="20" /> Cyclo — Plataforma de economía circular
+App ciudadana de reciclaje con mapa interactivo, reconocimiento de materiales por cámara (CycloScan) y gamificación con validación por geolocalización. Disponible en español, inglés y coreano. Lideré el desarrollo en el **Global Green Challenge**, proyecto interuniversitario Paraguay–Corea.
 
-![.NET](https://img.shields.io/badge/.NET_10-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+<img src="https://skillicons.dev/icons?i=react,vite,tailwind,nodejs,express,postgres,tensorflow" height="36" />
 
-[**Ver repo →**](https://github.com/ArielBG1/pos-inventario)
-
-</td>
-<td width="33%" valign="top">
-
-### ♻️ Cyclo
-Plataforma de economía circular con detección de materiales por IA, mapa de reciclaje y gamificación. Lideré el desarrollo en el **Global Green Challenge** (Paraguay–Corea).
-
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/Express-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![PostGIS](https://img.shields.io/badge/PostGIS-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow.js-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
-
-[**Ver repo →**](https://github.com/ArielBG1/cyclo)
+[![Demo](https://img.shields.io/badge/Demo_en_vivo-512BD4?style=for-the-badge&logo=vercel&logoColor=white)](https://cyclo-nine.vercel.app)
+[![Repo](https://img.shields.io/badge/Repositorio-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ArielBG1/Cyclo)
 
 </td>
-<td width="33%" valign="top">
+</tr>
+<tr>
+<td width="50%" valign="top">
 
-### 🧑‍🏫 Asistencia facial
-Marcación docente que valida horario, proximidad GPS (100 m) e identidad facial con anti-spoofing.
+### <img src="https://api.iconify.design/lucide/shopping-cart.svg?color=%237C6CF2" height="20" /> DespensaAPP — POS e inventario
+Punto de venta e inventario para comercio minorista: lector de código de barras, productos por peso, compras, auditoría de stock y roles.
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
-![DeepFace](https://img.shields.io/badge/DeepFace-FF4B4B?style=flat-square)
+<img src="https://skillicons.dev/icons?i=cs,dotnet,postgres" height="36" />
 
-[**Ver repo →**](https://github.com/ArielBG1/asistencia-facial)
+[![Repo](https://img.shields.io/badge/Ver_repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ArielBG1/DespensaAPP)
+
+</td>
+<td width="50%" valign="top">
+
+### <img src="https://api.iconify.design/lucide/scan-face.svg?color=%237C6CF2" height="20" /> Asistencia con reconocimiento facial
+Marcación docente que valida ventana horaria, proximidad GPS (100 m) e identidad facial con anti-spoofing usando DeepFace y SQL Server. Proyecto en equipo de 6.
+
+<img src="https://skillicons.dev/icons?i=py,flask,opencv" height="36" />
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### <img src="https://api.iconify.design/lucide/ticket.svg?color=%237C6CF2" height="20" /> Soporte por tickets
+Sistema de mesa de ayuda para registrar y dar seguimiento a tickets de soporte. Desarrollado en equipo.
+
+<img src="https://skillicons.dev/icons?i=nodejs,js" height="36" />
+
+[![Repo](https://img.shields.io/badge/Ver_repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ArielBG1/soporte_ticket)
+
+</td>
+<td width="50%" valign="top">
+
+### <img src="https://api.iconify.design/lucide/layout-template.svg?color=%237C6CF2" height="20" /> Torotech — Landing Page
+Landing page para Torotech, la plataforma educativa del Instituto Técnico Superior Santa María del Rosario (ITSSMAR).
+
+<img src="https://skillicons.dev/icons?i=html,css" height="36" />
+
+[![Repo](https://img.shields.io/badge/Ver_repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ArielBG1/Torotech-LandingPage)
 
 </td>
 </tr>
 </table>
 
-## 📊 Estadísticas
+## <img src="https://api.iconify.design/lucide/activity.svg?color=%237C6CF2" height="24" /> Estadísticas
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=ArielBG1&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArielBG1&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" />
+  <img height="165" src="./profile/stats.svg" alt="Estadísticas" />
+  <img height="165" src="./profile/top-langs.svg" alt="Lenguajes" />
   <br/>
-  <img src="https://streak-stats.demolab.com?user=ArielBG1&theme=tokyonight&hide_border=true" />
+  <img src="https://streak-stats.demolab.com?user=ArielBG1&theme=tokyonight&hide_border=true" alt="Racha" />
 </div>
 
 <br/>
