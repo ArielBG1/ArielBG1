@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', 'assets');
 
 /* -------------------------------------------------------------------------- */
-/* Contenido (mismo que el portafolio)                                         */
+/* Contenido (versión resumida del portafolio)                                 */
 /* -------------------------------------------------------------------------- */
 
 const DATA = {
@@ -33,102 +33,65 @@ const DATA = {
   profileJson: {
     nombre: 'Ariel Bogado',
     rol: 'Backend Developer',
+    stack: ['C#', '.NET', 'PostgreSQL', 'SQL Server'],
     ubicacion: 'Paraguay',
-    perfil: [
-      'Backend Developer | C# · .NET',
-      'APIs REST · PostgreSQL · SQL Server',
-      'Frontend con React + Tailwind',
-      'Estudiante de Ingeniería Informática',
-    ],
     intereses: ['IA aplicada', 'Sistemas distribuidos'],
   },
-  bio: 'Desarrollador backend con más de 2 años de experiencia en C# y .NET, enfocado en el desarrollo y mantenimiento de sistemas en producción para la gestión universitaria. Experiencia en bases de datos PostgreSQL y SQL Server, APIs REST, relevamiento de requerimientos y coordinación de equipos de desarrollo, además de desarrollo frontend con React, Tailwind CSS y Bootstrap. Estudiante de 5.º año de Ingeniería Informática, con interés en IA aplicada y sistemas distribuidos.',
-  highlights: [
-    { icon: 'building-2', text: '**Software Developer en UNIDA**: desarrollo y mantengo la plataforma universitaria en .NET, relevo requerimientos con las áreas usuarias y lidero al equipo de desarrollo' },
-    { icon: 'briefcase', text: 'Proyectos **freelance**: sistemas de gestión, punto de venta e inventario' },
-    { icon: 'graduation-cap', text: 'Estudiante de 5.º año de **Ingeniería Informática**' },
-    { icon: 'brain-circuit', text: 'Me interesan la **IA aplicada** y los **sistemas distribuidos**' },
-    { icon: 'map-pin', text: 'Paraguay' },
-  ],
   stack: [
-    { label: 'Frontend', icon: 'monitor', link: 'HTTP · JSON', items: [['skill-icons:react-dark', 'React'], ['skill-icons:vite-dark', 'Vite'], ['skill-icons:tailwindcss-dark', 'Tailwind CSS'], ['skill-icons:bootstrap', 'Bootstrap'], ['skill-icons:javascript', 'JavaScript'], ['skill-icons:html', 'HTML'], ['skill-icons:css', 'CSS']] },
-    { label: 'Backend', icon: 'server', link: 'SQL', items: [['skill-icons:cs', 'C#'], ['skill-icons:dotnet', '.NET'], ['skill-icons:nodejs-dark', 'Node.js'], ['skill-icons:expressjs-dark', 'Express'], ['skill-icons:java-dark', 'Java'], ['skill-icons:spring-dark', 'Spring Boot'], ['skill-icons:python-dark', 'Python'], ['skill-icons:flask-dark', 'Flask'], ['skill-icons:fastapi', 'FastAPI']] },
+    { label: 'Frontend', icon: 'monitor', items: [['skill-icons:react-dark', 'React'], ['skill-icons:vite-dark', 'Vite'], ['skill-icons:tailwindcss-dark', 'Tailwind CSS'], ['skill-icons:bootstrap', 'Bootstrap'], ['skill-icons:javascript', 'JavaScript'], ['skill-icons:html', 'HTML'], ['skill-icons:css', 'CSS']] },
+    { label: 'Backend', icon: 'server', items: [['skill-icons:cs', 'C#'], ['skill-icons:dotnet', '.NET'], ['skill-icons:nodejs-dark', 'Node.js'], ['skill-icons:expressjs-dark', 'Express'], ['skill-icons:java-dark', 'Java'], ['skill-icons:spring-dark', 'Spring Boot'], ['skill-icons:python-dark', 'Python'], ['skill-icons:flask-dark', 'Flask'], ['skill-icons:fastapi', 'FastAPI']] },
     { label: 'Bases de datos', icon: 'database', items: [['skill-icons:postgresql-dark', 'PostgreSQL'], ['skill-icons:mysql-dark', 'MySQL'], ['devicon:microsoftsqlserver', 'SQL Server'], ['devicon:oracle', 'Oracle']] },
   ],
-  tools: { label: 'Herramientas', icon: 'wrench', items: [['skill-icons:docker', 'Docker'], ['skill-icons:git', 'Git'], ['skill-icons:github-dark', 'GitHub'], ['skill-icons:visualstudio-dark', 'Visual Studio'], ['skill-icons:vscode-dark', 'VS Code'], ['skill-icons:postman', 'Postman']] },
   experience: {
     role: 'Software Developer',
     company: 'Universidad de la Integración de las Américas (UNIDA)',
     period: 'Abril 2024 – Presente',
-    groups: [
-      {
-        title: 'Desarrollo',
-        items: [
-          'Desarrollo nuevas funcionalidades y realizo el mantenimiento de la plataforma universitaria en C# con ASP.NET MVC y ASP.NET Core (.NET 10).',
-          'Construyo módulos y APIs REST a medida para distintas áreas de la universidad, desde el modelado de datos hasta la integración con otros sistemas.',
-          'Modelo bases de datos en SQL Server y optimizo el acceso a datos mediante consultas SQL y LINQ.',
-          'Diagnostico y corrijo incidencias en producción, y automatizo procesos internos para reducir tareas manuales.',
-        ],
-      },
-      {
-        title: 'Liderazgo y análisis',
-        items: [
-          'Relevo requerimientos con las distintas áreas de la universidad, los analizo y defino el alcance de cada desarrollo.',
-          'Planifico y distribuyo las tareas del equipo de desarrollo según prioridades, bajo la supervisión de la Jefatura de Sistemas.',
-          'Reviso el trabajo entregado por el equipo y hago seguimiento del cumplimiento de plazos.',
-          'Valido las entregas con los usuarios y elaboro documentación técnica de los sistemas.',
-        ],
-      },
+    items: [
+      'Desarrollo y mantengo la plataforma universitaria en C# con ASP.NET MVC y ASP.NET Core (.NET 10).',
+      'Construyo módulos y APIs REST a medida, desde el modelado de datos hasta la integración con otros sistemas.',
+      'Modelo bases de datos en SQL Server y optimizo el acceso a datos con consultas SQL y LINQ.',
+      'Relevo requerimientos, planifico las tareas del equipo de desarrollo y reviso las entregas.',
     ],
   },
   projects: [
     {
-      slug: 'cyclo', featured: true, icon: 'recycle', accent: '#10b981',
+      slug: 'cyclo', icon: 'recycle', accent: '#10b981',
       title: 'Cyclo — Plataforma de economía circular',
       role: 'Desarrollador full stack · Líder técnico',
-      description: 'App ciudadana de reciclaje con mapa interactivo, reconocimiento de materiales por cámara (CycloScan) y gamificación con validación por geolocalización. Disponible en español, inglés y coreano. Lideré el desarrollo en el **Global Green Challenge**, junto a INHA University (Corea del Sur).',
+      description: 'App ciudadana de reciclaje con mapa interactivo, reconocimiento de materiales por cámara y gamificación. Lideré el desarrollo en el **Global Green Challenge**, junto a INHA University (Corea del Sur).',
       stack: [['skill-icons:react-dark', 'React'], ['skill-icons:vite-dark', 'Vite'], ['skill-icons:tailwindcss-dark', 'Tailwind CSS'], ['skill-icons:nodejs-dark', 'Node.js'], ['skill-icons:expressjs-dark', 'Express'], ['skill-icons:postgresql-dark', 'PostgreSQL + PostGIS'], ['skill-icons:tensorflow-dark', 'TensorFlow.js']],
-      repo: 'github.com/ArielBG1/Cyclo', demo: 'cyclo-nine.vercel.app',
     },
     {
       slug: 'despensa-app', icon: 'shopping-cart', accent: '#7c6cf2',
       title: 'DespensaAPP — POS e inventario',
-      description: 'Punto de venta e inventario para comercio minorista: lector de código de barras, productos por peso, compras, auditoría de stock y roles.',
+      description: 'Punto de venta e inventario para comercio minorista.',
       stack: [['skill-icons:cs', 'C#'], ['skill-icons:dotnet', '.NET'], ['skill-icons:postgresql-dark', 'PostgreSQL']],
     },
     {
       slug: 'facial-attendance', icon: 'scan-face', accent: '#7c6cf2',
       title: 'Asistencia con reconocimiento facial',
-      description: 'Marcación docente que valida ventana horaria, proximidad GPS (100 m) e identidad facial con anti-spoofing usando DeepFace y SQL Server.',
+      description: 'Marcación docente que valida horario, proximidad GPS e identidad facial con anti-spoofing.',
       stack: [['skill-icons:python-dark', 'Python'], ['skill-icons:flask-dark', 'Flask'], ['skill-icons:opencv-dark', 'OpenCV'], ['devicon:microsoftsqlserver', 'SQL Server']],
     },
     {
       slug: 'ticket-support', icon: 'ticket', accent: '#7c6cf2', team: 'Proyecto en equipo',
       title: 'Soporte por tickets',
-      description: 'Sistema de mesa de ayuda para registrar y dar seguimiento a tickets de soporte.',
+      description: 'Mesa de ayuda para registrar y dar seguimiento a tickets de soporte.',
       stack: [['skill-icons:nodejs-dark', 'Node.js'], ['skill-icons:javascript', 'JavaScript']],
     },
     {
       slug: 'torotech-landing', icon: 'layout-template', accent: '#7c6cf2',
       title: 'Torotech — Landing Page',
-      description: 'Landing page para Torotech, la plataforma educativa del Instituto Técnico Superior Santa María del Rosario (ITSSMAR).',
+      description: 'Landing page de la plataforma educativa del ITSSMAR.',
       stack: [['skill-icons:html', 'HTML'], ['skill-icons:css', 'CSS']],
     },
   ],
-  contactText: '¿Tenés una propuesta de trabajo o un proyecto freelance en mente? Escribime y te respondo a la brevedad.',
-  contactJson: {
-    email: 'arielbogadogimenez@gmail.com',
-    linkedin: 'linkedin.com/in/arielbogadogimenez',
-    github: 'github.com/ArielBG1',
-    ubicacion: 'Paraguay',
-  },
   buttons: [
     { file: 'btn-portafolio.svg', icon: 'globe', label: 'Portafolio', value: 'arielbogado.vercel.app', arrow: 'arrow-up-right', slot: [0, 3] },
     { file: 'btn-linkedin.svg', icon: 'linkedin', label: 'LinkedIn', value: 'in/arielbogadogimenez', arrow: 'arrow-up-right', slot: [1, 3] },
     { file: 'btn-email.svg', icon: 'mail', label: 'Email', value: 'arielbogadogimenez@gmail.com', arrow: 'arrow-right', slot: [2, 3] },
-    { file: 'btn-cyclo-demo.svg', icon: 'external-link', label: 'Cyclo · Demo en vivo', value: 'cyclo-nine.vercel.app', arrow: 'arrow-up-right', slot: [0, 2] },
-    { file: 'btn-cyclo-repo.svg', icon: 'github', label: 'Cyclo · Repositorio', value: 'github.com/ArielBG1/Cyclo', arrow: 'arrow-up-right', slot: [1, 2] },
   ],
+  labels: { demo: 'Demo en vivo', repo: 'Ver repositorio' },
 };
 
 /* -------------------------------------------------------------------------- */
@@ -136,12 +99,17 @@ const DATA = {
 /* -------------------------------------------------------------------------- */
 
 const W = 880;
-// El README pone las imágenes de una misma fila sin espacios entre medio (ver README.md), así que las
-// separaciones van dentro de cada SVG: todo queda alineado a los bordes del ancho completo.
-const GAP = 7; // ≈ el espacio vertical que GitHub deja entre imágenes; también separa encabezado y cuerpo
+// Las imágenes de una misma fila van pegadas en el README (sin espacios entre medio), así que la separación
+// horizontal va dentro de cada SVG. Verticalmente GitHub deja ~6 px entre imágenes: GAP es parecido.
+const GAP = 7;
 const SECTION_TOP = 32; // aire antes de cada sección
-const HEAD = 84; // alto del encabezado de sección
+const HEAD = 78; // alto del encabezado de sección
 const BODY_TOP = SECTION_TOP + HEAD + GAP;
+const BTN_W = 189;
+const BTN_H = 38;
+// La fila de botones de la tarjeta destacada: la primera imagen ocupa este porcentaje del ancho.
+const SPLIT = 0.25;
+
 const C = {
   surface: '#13131f', surface2: '#1a1a2a', console: '#0e0e19', bar: '#151524', border: '#23233a', cborder: '#262640',
   fg: '#e6e6f0', soft: '#c9c9d9', muted: '#9a9ab0', brand: '#a397f7', primary: '#512bd4', get: '#00b4d8', ok: '#10b981', warn: '#f59e0b',
@@ -154,7 +122,7 @@ const OP = {
 const MONO = "'IBM Plex Mono','Fira Code',Consolas,Menlo,monospace";
 const SANS = "'IBM Plex Sans','Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif";
 // Ancho promedio de un carácter (en em) para estimar cortes de línea. Segoe UI / SF / Arial rondan 0,45-0,5;
-// los títulos en negrita usan SANS_BOLD_EM.
+// los textos en negrita usan SANS_BOLD_EM.
 const SANS_EM = 0.5;
 const SANS_BOLD_EM = 0.55;
 const MONO_EM = 0.61;
@@ -176,11 +144,10 @@ async function loadIcons() {
     if (!wanted.has(prefix)) wanted.set(prefix, new Set());
     wanted.get(prefix).add(name);
   };
-  DATA.highlights.forEach((h) => add(h.icon));
-  [...DATA.stack, DATA.tools].forEach((layer) => { add(layer.icon); layer.items.forEach(([id]) => add(id)); });
+  DATA.stack.forEach((layer) => { add(layer.icon); layer.items.forEach(([id]) => add(id)); });
   DATA.projects.forEach((p) => { add(p.icon); p.stack.forEach(([id]) => add(id)); });
   DATA.buttons.forEach((b) => { add(b.icon); add(b.arrow); });
-  ['braces', 'map-pin', 'chevron-down', 'arrow-up-down', 'arrow-left', 'terminal', 'calendar', 'star', 'user-round-cog', 'users', 'external-link', 'github'].forEach(add);
+  ['map-pin', 'terminal', 'calendar', 'user-round-cog', 'users', 'external-link', 'github'].forEach(add);
 
   for (const [prefix, names] of wanted) {
     const url = `https://api.iconify.design/${prefix}.json?icons=${[...names].join(',')}`;
@@ -327,7 +294,7 @@ ${body}
 `;
 }
 
-/** Barra de operación estilo Swagger (igual que los encabezados de sección del portafolio). */
+/** Encabezado de sección estilo Swagger (como los del portafolio, pero sin flecha: en GitHub no se puede colapsar). */
 function opblock(method, path, title, status, y = SECTION_TOP, height = HEAD) {
   const op = OP[method];
   const pillW = method.length * 8.6 + 18;
@@ -336,13 +303,12 @@ function opblock(method, path, title, status, y = SECTION_TOP, height = HEAD) {
   const statusW = textWidth(status, 13, MONO_EM);
   return `<g transform="translate(0 ${y})">
   <rect x="0.5" y="0.5" width="${W - 1}" height="${height - 1}" rx="12" fill="${op.tint}" stroke="${op.border}"/>
-  <rect x="24" y="18" width="${pillW}" height="22" rx="5" fill="${op.solid}"/>
-  <text x="${24 + pillW / 2}" y="33.5" text-anchor="middle" class="mono" font-size="12" font-weight="600" fill="#0b0b14" letter-spacing="0.6">${method}</text>
-  <text x="${pathX}" y="34" class="mono fg" font-size="14">${esc(path)}</text>
-  <line x1="${pathX + pathW + 14}" y1="29.5" x2="${W - 24 - statusW - 14}" y2="29.5" stroke="${C.muted}" stroke-opacity="0.35" stroke-dasharray="3 4"/>
-  <text x="${W - 24}" y="34" text-anchor="end" class="mono ok" font-size="13">${esc(status)}</text>
-  <text x="24" y="68" class="fg" font-size="25" font-weight="600" letter-spacing="-0.4">${esc(title)}</text>
-  ${icon('chevron-down', W - 44, 50, 20, C.muted)}
+  <rect x="24" y="16" width="${pillW}" height="22" rx="5" fill="${op.solid}"/>
+  <text x="${24 + pillW / 2}" y="31.5" text-anchor="middle" class="mono" font-size="12" font-weight="600" fill="#0b0b14" letter-spacing="0.6">${method}</text>
+  <text x="${pathX}" y="32" class="mono fg" font-size="14">${esc(path)}</text>
+  <line x1="${pathX + pathW + 14}" y1="27.5" x2="${W - 24 - statusW - 14}" y2="27.5" stroke="${C.muted}" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+  <text x="${W - 24}" y="32" text-anchor="end" class="mono ok" font-size="13">${esc(status)}</text>
+  <text x="24" y="62" class="fg" font-size="22" font-weight="600" letter-spacing="-0.3">${esc(title)}</text>
 </g>`;
 }
 
@@ -351,45 +317,84 @@ const card = (x, y, w, h, fill = C.surface, stroke = C.border, rx = 12) =>
   `<rect x="${x + 0.5}" y="${y + 0.5}" width="${w - 1}" height="${h - 1}" rx="${rx}" fill="${fill}" stroke="${stroke}"/>`;
 
 /** Chip de tecnología: ícono + nombre. Devuelve markup y ancho. */
-function chip(id, name, x, y, size = 13) {
-  const iconSize = 22;
-  const w = 8 + iconSize + 8 + textWidth(name, size, SANS_BOLD_EM) + 12;
+function chip(id, name, x, y) {
+  const w = 6 + 20 + 7 + textWidth(name, 12.5, SANS_BOLD_EM) + 10;
   return {
     w,
-    markup: `${card(x, y, w, 32, C.surface2, C.border, 8)}${techIcon(id, x + 5, y + 5, iconSize)}<text x="${x + 5 + iconSize + 8}" y="${y + 21}" class="soft" font-size="${size}">${esc(name)}</text>`,
+    markup: `${card(x, y, w, 30, C.surface2, C.border, 7)}${techIcon(id, x + 5, y + 5, 20)}<text x="${x + 32}" y="${y + 19.5}" class="soft" font-size="12.5">${esc(name)}</text>`,
   };
 }
 
 /** Coloca chips en filas dentro de un ancho máximo. */
-function chipRows(items, x, y, maxWidth, gap = 8) {
+function chipRows(items, x, y, maxWidth, gap = 6) {
   let cx = x;
   let cy = y;
   const parts = [];
   items.forEach(([id, name]) => {
-    const probe = chip(id, name, 0, 0);
-    if (cx + probe.w > x + maxWidth && cx > x) {
+    const { w } = chip(id, name, 0, 0);
+    if (cx + w > x + maxWidth && cx > x) {
       cx = x;
-      cy += 32 + gap;
+      cy += 30 + gap;
     }
     parts.push(chip(id, name, cx, cy).markup);
-    cx += probe.w + gap;
+    cx += w + gap;
   });
-  return { markup: parts.join(''), height: cy - y + 32 };
+  return { markup: parts.join(''), height: cy - y + 30 };
 }
+
+/** Botón como los del sitio: primario (violeta sólido) o secundario (borde). */
+function actionButton(x, y, kind, iconName, label) {
+  const primary = kind === 'primary';
+  const color = primary ? '#ffffff' : C.fg;
+  const contentW = 16 + 8 + textWidth(label, 13, SANS_BOLD_EM);
+  const start = x + (BTN_W - contentW) / 2;
+  const rect = primary
+    ? `<rect x="${x}" y="${y}" width="${BTN_W}" height="${BTN_H}" rx="8" fill="${C.primary}"/>`
+    : card(x, y, BTN_W, BTN_H, C.surface2, C.cborder, 8);
+  return `${rect}${icon(iconName, start, y + (BTN_H - 16) / 2, 16, color)}<text x="${start + 24}" y="${y + BTN_H / 2 + 4.5}" font-size="13" font-weight="600" fill="${color}">${esc(label)}</text>`;
+}
+
+/**
+ * Celda `index` de una fila de `count` imágenes que en el README ocupan `100/count %` cada una.
+ * Devuelve el ancho de la imagen, el de la tarjeta y dónde dibujarla para que entre tarjetas quede GAP.
+ */
+function slot(index, count) {
+  const slotW = W / count;
+  const cardW = (W - GAP * (count - 1)) / count;
+  return { slotW, cardW, x: index * (cardW + GAP - slotW) };
+}
+
+/** Barra superior de tarjeta de proyecto: GET /proyectos/slug ... 200. */
+function resourceBar(x, y, w, path) {
+  const r = 12;
+  return `<path d="M${x + 0.5} ${y + 34.5}V${y + r + 0.5}Q${x + 0.5} ${y + 0.5} ${x + r + 0.5} ${y + 0.5}H${x + w - r - 0.5}Q${x + w - 0.5} ${y + 0.5} ${x + w - 0.5} ${y + r + 0.5}V${y + 34.5}Z" fill="${C.bar}"/>
+  <line x1="${x}" y1="${y + 34.5}" x2="${x + w}" y2="${y + 34.5}" stroke="${C.cborder}"/>
+  <rect x="${x + 14}" y="${y + 9}" width="34" height="18" rx="4" fill="none" stroke="rgba(0,180,216,0.5)"/>
+  <text x="${x + 31}" y="${y + 22}" text-anchor="middle" class="mono" font-size="10.5" font-weight="600" fill="${C.get}">GET</text>
+  <text x="${x + 58}" y="${y + 22}" class="mono" font-size="11.5">${esc(path)}</text>
+  <text x="${x + w - 14}" y="${y + 22}" text-anchor="end" class="mono ok" font-size="11.5">200</text>`;
+}
+
+function badge(x, y, iconName, text, color, fill) {
+  const w = textWidth(text, 11.5, SANS_BOLD_EM) + 40;
+  return `<rect x="${x + 0.5}" y="${y + 0.5}" width="${w - 1}" height="23" rx="11.5" fill="${fill}" stroke="${color}" stroke-opacity="0.45"/>${icon(iconName, x + 10, y + 5, 13, color)}<text x="${x + 29}" y="${y + 16}" font-size="11.5" font-weight="600" fill="${color}">${esc(text)}</text>`;
+}
+
+const stackNames = (p) => p.stack.map(([, n]) => n).join(', ');
 
 /* -------------------------------------------------------------------------- */
 /* Paneles                                                                     */
 /* -------------------------------------------------------------------------- */
 
 function hero() {
-  const H = 324;
+  const H = 262;
   const json = jsonLines(DATA.profileJson);
-  const box = { x: 440, y: 58, w: 416, h: 244 };
+  const box = { x: 440, y: 58, w: 416, h: 182 };
   const jsonMarkup = json
     .map((line, i) => `<text x="${box.x + 16}" y="${box.y + 52 + i * 15}" class="mono j" font-size="11" xml:space="preserve" style="animation-delay:${1.6 + i * 0.07}s">${line}</text>`)
     .join('');
   const roles = DATA.roles
-    .map((role, i) => `<text x="44" y="282" class="mono role${i === 0 ? ' first' : ''}" font-size="14" style="animation-delay:${i * 3}s">${esc(role)}</text>`)
+    .map((role, i) => `<text x="44" y="238" class="mono role${i === 0 ? ' first' : ''}" font-size="14" style="animation-delay:${i * 3}s">${esc(role)}</text>`)
     .join('');
   const css = `
   .path { animation: type 1s steps(20) 0.3s backwards; }
@@ -424,13 +429,13 @@ function hero() {
   <circle cx="${W - 106}" cy="21" r="4" fill="${C.warn}" class="pending"/><text x="${W - 22}" y="25" text-anchor="end" class="mono pending" fill="${C.warn}" font-size="12">pendiente…</text>
   <circle cx="${W - 76}" cy="21" r="4" fill="${C.ok}" class="done"/><text x="${W - 22}" y="25" text-anchor="end" class="mono ok done" font-size="12">200 OK</text>
 
-  <rect x="28" y="70" width="42" height="22" rx="5" fill="${C.get}"/>
-  <text x="49" y="85.5" text-anchor="middle" class="mono" font-size="12" font-weight="600" fill="#0b0b14">GET</text>
-  <text x="82" y="86.5" class="mono fg path" font-size="14.5">${DATA.apiPath}</text>
-  <text x="26" y="160" class="fg" font-size="48" font-weight="600" letter-spacing="-1.2">${esc(DATA.name)}</text>
-  <text x="28" y="196" class="soft" font-size="19" font-weight="500">${esc(DATA.title)}</text>
-  ${icon('map-pin', 28, 214, 16, C.get)}<text x="50" y="227" class="soft" font-size="14">${esc(DATA.location)}</text>
-  <text x="28" y="282" class="mono brand" font-size="14">&gt;</text>
+  <rect x="28" y="66" width="42" height="22" rx="5" fill="${C.get}"/>
+  <text x="49" y="81.5" text-anchor="middle" class="mono" font-size="12" font-weight="600" fill="#0b0b14">GET</text>
+  <text x="82" y="82.5" class="mono fg path" font-size="14.5">${DATA.apiPath}</text>
+  <text x="26" y="146" class="fg" font-size="46" font-weight="600" letter-spacing="-1.2">${esc(DATA.name)}</text>
+  <text x="28" y="178" class="soft" font-size="18" font-weight="500">${esc(DATA.title)}</text>
+  ${icon('map-pin', 28, 193, 16, C.get)}<text x="50" y="206" class="soft" font-size="14">${esc(DATA.location)}</text>
+  <text x="28" y="238" class="mono brand" font-size="14">&gt;</text>
   ${roles}
 
   ${card(box.x, box.y, box.w, box.h, '#0b0b14', C.cborder, 10)}
@@ -441,16 +446,6 @@ function hero() {
   ${jsonMarkup}
   <rect x="${box.x + 16}" y="${box.y + 52 + json.length * 15 - 10}" width="7" height="13" fill="${C.brand}" class="cursor"/>`;
   return svg(W, H, `GET ${DATA.apiPath} · 200 OK — ${DATA.name}, ${DATA.title}`, body, css);
-}
-
-/**
- * Celda `index` de una fila de `count` imágenes que en el README ocupan `100/count %` cada una.
- * Devuelve el ancho de la imagen, el de la tarjeta y dónde dibujarla para que entre tarjetas quede GAP.
- */
-function slot(index, count) {
-  const slotW = W / count;
-  const cardW = (W - GAP * (count - 1)) / count;
-  return { slotW, cardW, x: index * (cardW + GAP - slotW) };
 }
 
 function button({ icon: iconName, label, value, arrow, slot: [index, count] }) {
@@ -465,229 +460,135 @@ function button({ icon: iconName, label, value, arrow, slot: [index, count] }) {
   return svg(slotW, h, `${label}: ${value}`, body);
 }
 
-function about() {
-  const top = BODY_TOP;
-  const pad = 24;
-  const bioW = 430;
-  const bioLines = wrapRich(DATA.bio, bioW, 14.5);
-  const bioH = bioLines.length * 24;
-  const hlX = pad + bioW + 28;
-  const hlW = W - hlX - pad;
-  const textW = hlW - 32 - 52;
-  let hy = top + pad + 16;
-  const highlights = DATA.highlights
-    .map((h) => {
-      const lines = wrapRich(h.text, textW, 13.5);
-      const block = `${card(hlX + 16, hy, 34, 34, C.surface2, C.border, 9)}${icon(h.icon, hlX + 25, hy + 9, 16, C.brand)}${renderRichLines(lines, hlX + 62, hy + 16, 20, 'soft', 13.5)}`;
-      hy += Math.max(34, lines.length * 20) + 14;
-      return block;
-    })
-    .join('');
-  const hlH = hy - (top + pad + 16) + 2;
-  const bodyH = Math.max(bioH + 8, hlH + 16) + pad * 2;
-  const H = top + bodyH;
-  const body = `${opblock('GET', '/sobre-mi', 'Sobre mí', '200 OK')}
-  ${card(0, top, W, bodyH)}
-  ${renderRichLines(bioLines, pad, top + pad + 20, 24, 'soft', 14.5)}
-  ${card(hlX, top + pad, hlW, hlH + 16, C.console, C.border, 12)}
-  ${highlights}`;
-  return svg(W, H, `GET /sobre-mi — Sobre mí. ${DATA.bio}`, body);
-}
-
+/** Stack: una tarjeta con una fila por capa, unidas por la línea del pipeline (como en el portafolio). */
 function stack() {
   const top = BODY_TOP;
   const pad = 24;
-  const lineX = pad + 14;
-  const layerX = pad + 40;
-  const toolsW = 200;
-  const layerW = W - pad * 2 - 40 - toolsW - 20;
-  let y = top + pad;
+  const nodeX = pad + 4;
+  const chipsX = 188;
+  const chipsW = W - pad - chipsX;
+  const rowPad = 16;
+  let y = top + 6;
   const nodes = [];
-  const layers = DATA.stack
+  const rows = DATA.stack
     .map((layer, i) => {
-      const rows = chipRows(layer.items, layerX + 18, y + 48, layerW - 36);
-      const h = 48 + rows.height + 18;
-      nodes.push(y + 27);
-      let markup = `${card(layerX, y, layerW, h)}${icon(layer.icon, layerX + 18, y + 17, 18, C.get)}<text x="${layerX + 44}" y="${y + 31}" class="fg" font-size="15" font-weight="600">${esc(layer.label)}</text>${rows.markup}`;
-      y += h;
-      if (layer.link) {
-        const tagW = textWidth(layer.link, 11.5, MONO_EM) + 40;
-        markup += `${card(layerX, y + 10, tagW, 24, 'none', C.border, 6).replace('stroke=', 'stroke-dasharray="3 3" stroke=')}${icon('arrow-up-down', layerX + 8, y + 15, 14, C.muted)}<text x="${layerX + 28}" y="${y + 26}" class="mono" font-size="11.5">${esc(layer.link)}</text>`;
-        y += 44;
-      }
+      const chips = chipRows(layer.items, chipsX, y + rowPad, chipsW);
+      const rowH = chips.height + rowPad * 2;
+      const mid = y + rowPad + 15;
+      nodes.push(mid);
+      const divider = i > 0 ? `<line x1="${pad + 24}" y1="${y + 0.5}" x2="${W - pad}" y2="${y + 0.5}" stroke="${C.border}" stroke-dasharray="3 4"/>` : '';
+      const markup = `${divider}${icon(layer.icon, pad + 24, mid - 9, 18, C.get)}<text x="${pad + 50}" y="${mid + 5}" class="fg" font-size="14" font-weight="600">${esc(layer.label)}</text>${chips.markup}`;
+      y += rowH;
       return markup;
     })
     .join('');
-  const total = DATA.stack.reduce((n, l) => n + l.items.length, 0) + DATA.tools.items.length;
-  const summaryY = y + 26;
-  const pipeline = `<line x1="${lineX}" y1="${nodes[0]}" x2="${lineX}" y2="${summaryY - 4}" stroke="${C.border}" stroke-width="1.5"/>
-  <line x1="${lineX}" y1="${nodes[0]}" x2="${lineX}" y2="${nodes[nodes.length - 1]}" stroke="${C.brand}" stroke-width="1.5"/>
-  ${nodes.map((ny) => `<circle cx="${lineX}" cy="${ny}" r="5.5" fill="${C.surface}" stroke="${C.brand}" stroke-width="2"/>`).join('')}
-  <circle cx="${lineX}" cy="${nodes[0]}" r="7" fill="${C.ok}" stroke="rgba(16,185,129,0.25)" stroke-width="6"/>
-  ${icon('arrow-left', layerX, summaryY - 13, 16, C.ok)}<text x="${layerX + 24}" y="${summaryY}" class="mono ok" font-size="13">200 OK · ${total} tecnologías</text>`;
-
-  // Herramientas: grilla de baldosas a la derecha.
-  const tx = W - pad - toolsW;
-  const tileW = (toolsW - 36 - 10) / 2;
-  const tiles = DATA.tools.items
-    .map(([id, name], i) => {
-      const col = i % 2;
-      const row = Math.floor(i / 2);
-      const x = tx + 18 + col * (tileW + 10);
-      const ty = top + pad + 50 + row * 86;
-      return `${card(x, ty, tileW, 76, C.surface2, C.border, 9)}${techIcon(id, x + tileW / 2 - 16, ty + 11, 32)}<text x="${x + tileW / 2}" y="${ty + 63}" text-anchor="middle" class="soft" font-size="11.5">${esc(name)}</text>`;
-    })
-    .join('');
-  const toolsH = 50 + Math.ceil(DATA.tools.items.length / 2) * 86 + 8;
-  const tools = `${card(tx, top + pad, toolsW, toolsH)}${icon(DATA.tools.icon, tx + 18, top + pad + 17, 18, C.get)}<text x="${tx + 44}" y="${top + pad + 31}" class="fg" font-size="15" font-weight="600">${esc(DATA.tools.label)}</text>${tiles}`;
-
-  const H = Math.max(summaryY + pad, top + pad + toolsH + pad);
-  const all = [...DATA.stack.flatMap((l) => l.items), ...DATA.tools.items].map(([, n]) => n).join(', ');
-  return svg(W, H, `GET /stack — Stack tecnológico: ${all}`, `${opblock('GET', '/stack', 'Stack tecnológico', '200 OK')}${pipeline}${layers}${tools}`);
+  const H = y + 6;
+  const pipeline = `<line x1="${nodeX}" y1="${nodes[0]}" x2="${nodeX}" y2="${nodes.at(-1)}" stroke="${C.brand}" stroke-width="1.5"/>
+  ${nodes.map((ny) => `<circle cx="${nodeX}" cy="${ny}" r="5" fill="${C.surface}" stroke="${C.brand}" stroke-width="2"/>`).join('')}
+  <circle cx="${nodeX}" cy="${nodes[0]}" r="6" fill="${C.ok}" stroke="rgba(16,185,129,0.25)" stroke-width="5"/>`;
+  const all = DATA.stack.map((l) => `${l.label}: ${l.items.map(([, n]) => n).join(', ')}`).join('. ');
+  return svg(W, H, `GET /stack — Stack tecnológico. ${all}`, `${opblock('GET', '/stack', 'Stack tecnológico', '200 OK')}${card(0, top, W, H - top)}${pipeline}${rows}`);
 }
 
 function experience() {
   const top = BODY_TOP;
-  const pad = 26;
+  const pad = 24;
   const ex = DATA.experience;
-  const textX = pad + 82;
+  const textX = pad + 76;
   const textW = W - textX - pad;
-  let y = top + 40 + pad + 48; // línea base de la empresa
-  let n = 0;
-  const groups = ex.groups
-    .map((group, gi) => {
-      y += gi === 0 ? 40 : 18;
-      let markup = `<text x="${pad}" y="${y}" class="mono brand" font-size="11.5" font-weight="600" letter-spacing="1.2"># ${esc(group.title.toUpperCase())}</text>`;
-      y += 30;
-      group.items.forEach((item) => {
-        n += 1;
-        const lines = wrapRich(item, textW, 13.5);
-        markup += `<text x="${pad}" y="${y}" class="mono" font-size="12">${String(n).padStart(2, '0')}</text><text x="${pad + 30}" y="${y}" class="mono ok" font-size="12">INFO</text>${renderRichLines(lines, textX, y, 21, 'fg', 13.5)}`;
-        y += lines.length * 21 + 10;
-      });
+  let y = top + 40 + 104; // línea base del primer ítem
+  const items = ex.items
+    .map((item, i) => {
+      const lines = wrapRich(item, textW, 13.5);
+      const markup = `<text x="${pad}" y="${y}" class="mono" font-size="12">${String(i + 1).padStart(2, '0')}</text><text x="${pad + 28}" y="${y}" class="mono ok" font-size="12">INFO</text>${renderRichLines(lines, textX, y, 20, 'fg', 13.5)}`;
+      y += (lines.length - 1) * 20 + 28;
       return markup;
     })
     .join('');
-  const cursorY = y + 4;
-  const H = cursorY + pad;
+  const H = y + 22;
   const body = `${opblock('GET', '/experiencia', 'Experiencia', '200 OK')}
   ${card(0, top, W, H - top, C.console, C.cborder, 12)}
   <path d="M0.5 ${top + 40.5}V${top + 12.5}Q0.5 ${top + 0.5} 12.5 ${top + 0.5}H${W - 12.5}Q${W - 0.5} ${top + 0.5} ${W - 0.5} ${top + 12.5}V${top + 40.5}Z" fill="${C.bar}"/>
   <line x1="0" y1="${top + 40.5}" x2="${W}" y2="${top + 40.5}" stroke="${C.cborder}"/>
   ${icon('terminal', 18, top + 12, 16, C.muted)}<text x="42" y="${top + 25}" class="mono" font-size="12">tail -f experiencia.log</text>
   ${icon('calendar', W - 24 - textWidth(ex.period, 12, MONO_EM) - 22, top + 13, 14, C.ok)}<text x="${W - 24}" y="${top + 25}" text-anchor="end" class="mono ok" font-size="12">${esc(ex.period)}</text>
-  <text x="${pad}" y="${top + 40 + pad + 22}" class="fg" font-size="22" font-weight="600">${esc(ex.role)}</text>
-  <text x="${pad}" y="${top + 40 + pad + 48}" font-size="14.5">${esc(ex.company)}</text>
-  ${groups}
-  <text x="${pad}" y="${cursorY}" class="mono" font-size="12">${String(n + 1).padStart(2, '0')}</text>
-  <rect x="${pad + 30}" y="${cursorY - 11}" width="7" height="14" fill="${C.brand}" class="cursor"/>`;
+  <text x="${pad}" y="${top + 40 + 42}" class="fg" font-size="20" font-weight="600">${esc(ex.role)}</text>
+  <text x="${pad}" y="${top + 40 + 66}" font-size="14">${esc(ex.company)}</text>
+  ${items}
+  <text x="${pad}" y="${y}" class="mono" font-size="12">${String(ex.items.length + 1).padStart(2, '0')}</text>
+  <rect x="${pad + 28}" y="${y - 11}" width="7" height="14" fill="${C.brand}" class="cursor"/>`;
   const css = '.cursor { animation: blink 1.1s step-end infinite; } @keyframes blink { 50% { opacity: 0; } } @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }';
-  const plain = ex.groups.map((g) => `${g.title}: ${g.items.join(' ')}`).join(' ');
-  return svg(W, H, `GET /experiencia — ${ex.role}, ${ex.company} (${ex.period}). ${plain}`, body, css);
+  return svg(W, H, `GET /experiencia — ${ex.role}, ${ex.company} (${ex.period}). ${ex.items.join(' ')}`, body, css);
 }
 
 function headerOnly(method, path, title, status) {
   return svg(W, SECTION_TOP + HEAD, `${method} ${path} — ${title}`, opblock(method, path, title, status));
 }
 
-/** Barra superior de tarjeta de proyecto: GET /proyectos/slug ... 200. `roundRight: false` deja la esquina derecha recta. */
-function resourceBar(x, y, w, path, roundRight = true) {
-  const r = 12;
-  const right = roundRight
-    ? `H${x + w - r - 0.5}Q${x + w - 0.5} ${y + 0.5} ${x + w - 0.5} ${y + r + 0.5}V${y + 34.5}`
-    : `H${x + w}V${y + 34.5}`;
-  return `<path d="M${x + 0.5} ${y + 34.5}V${y + r + 0.5}Q${x + 0.5} ${y + 0.5} ${x + r + 0.5} ${y + 0.5}${right}Z" fill="${C.bar}"/>
-  <line x1="${x}" y1="${y + 34.5}" x2="${x + w}" y2="${y + 34.5}" stroke="${C.cborder}"/>
-  <rect x="${x + 14}" y="${y + 9}" width="34" height="18" rx="4" fill="none" stroke="rgba(0,180,216,0.5)"/>
-  <text x="${x + 31}" y="${y + 22}" text-anchor="middle" class="mono" font-size="10.5" font-weight="600" fill="${C.get}">GET</text>
-  <text x="${x + 58}" y="${y + 22}" class="mono" font-size="11.5">${esc(path)}</text>
-  <text x="${x + w - 14}" y="${y + 22}" text-anchor="end" class="mono ok" font-size="11.5">200</text>`;
-}
-
-function badge(x, y, iconName, text, color, fill) {
-  const w = textWidth(text, 11.5, SANS_BOLD_EM) + 40;
-  return { w, markup: `<rect x="${x + 0.5}" y="${y + 0.5}" width="${w - 1}" height="23" rx="11.5" fill="${fill}" stroke="${color}" stroke-opacity="0.45"/>${icon(iconName, x + 10, y + 5, 13, color)}<text x="${x + 29}" y="${y + 16}" font-size="11.5" font-weight="600" fill="${color}">${esc(text)}</text>` };
-}
-
+/**
+ * Proyecto destacado: el cuerpo de la tarjeta y, aparte, la fila de botones (dos imágenes, una por link)
+ * que en el README va pegada debajo y cierra la misma tarjeta.
+ */
 function projectFeatured(p) {
-  const cw = 400;
-  const json = jsonLines({ id: p.slug, rol: p.role, stack: p.stack.map(([, n]) => n), repo: p.repo, demo: p.demo });
-  const consoleH = 34 + 18 + json.length * 15 + 14;
-  const contentX = cw + 28;
-  const contentW = W - contentX - 26;
-  const titleLines = wrapRich(p.title, contentW, 22, SANS_BOLD_EM);
-  const descLines = wrapRich(p.description, contentW, 14);
-  let y = 26;
-  const b1 = badge(contentX, y, 'star', 'Destacado', C.brand, '#1a1a2a');
-  const b2 = badge(contentX + b1.w + 8, y, 'user-round-cog', p.role, C.ok, '#10291f');
-  y += 46;
-  const title = renderRichLines(titleLines, contentX, y, 28, 'fg', 22, 600);
-  y += (titleLines.length - 1) * 28 + 28;
-  const desc = renderRichLines(descLines, contentX, y, 22, 'soft', 14);
-  y += (descLines.length - 1) * 22 + 22;
-  const chips = chipRows(p.stack, contentX, y, contentW);
-  y += chips.height + 24;
-  const H = Math.max(consoleH, y);
-  const body = `${card(0, 0, W, H)}
-  <path d="M0.5 12.5Q0.5 0.5 12.5 0.5H${cw}V${H - 0.5}H12.5Q0.5 ${H - 0.5} 0.5 ${H - 12.5}Z" fill="${C.console}"/>
-  ${resourceBar(0, 0, cw, `/proyectos/${p.slug}`, false)}
-  ${json.map((line, i) => `<text x="18" y="${34 + 26 + i * 15}" class="mono" font-size="11" xml:space="preserve">${line}</text>`).join('')}
-  ${card(cw - 74, H - 74, 56, 56, C.bar, C.cborder, 12)}${icon(p.icon, cw - 60, H - 60, 28, p.accent)}
-  <line x1="${cw + 0.5}" y1="0" x2="${cw + 0.5}" y2="${H}" stroke="${C.border}"/>
-  ${b1.markup}${b2.markup}
-  ${title}
-  ${desc}
+  const pad = 26;
+  const textW = W - pad * 2 - 80;
+  let y = 52;
+  const roleBadge = badge(pad, y, 'user-round-cog', p.role, C.ok, '#10291f');
+  const titleLines = wrapRich(p.title, textW, 22, SANS_BOLD_EM);
+  const titleY = y + 24 + 32;
+  y = titleY + (titleLines.length - 1) * 28;
+  const descLines = wrapRich(p.description, textW, 14);
+  const descY = y + 28;
+  y = descY + (descLines.length - 1) * 22 + 20;
+  const chips = chipRows(p.stack, pad, y, W - pad * 2);
+  const H = y + chips.height + 20;
+  // Lados y arriba con borde; abajo abierto: sigue en la fila de botones.
+  const outline = `M0.5 ${H}V12.5Q0.5 0.5 12.5 0.5H${W - 12.5}Q${W - 0.5} 0.5 ${W - 0.5} 12.5V${H}`;
+  const body = `<path d="${outline}Z" fill="${C.surface}"/><path d="${outline}" fill="none" stroke="${C.border}"/>
+  ${resourceBar(0, 0, W, `/proyectos/${p.slug}`)}
+  ${card(W - pad - 52, 50, 52, 52, C.console, C.cborder, 12)}${icon(p.icon, W - pad - 39, 63, 26, p.accent)}
+  ${roleBadge}
+  ${renderRichLines(titleLines, pad, titleY, 28, 'fg', 22, 600)}
+  ${renderRichLines(descLines, pad, descY, 22, 'soft', 14)}
   ${chips.markup}`;
-  return svg(W, H, `${p.title}. Rol: ${p.role}. ${p.description.replace(/\*\*/g, '')} Stack: ${p.stack.map(([, n]) => n).join(', ')}.`, body);
+  const main = svg(W, H, `${p.title}. Rol: ${p.role}. ${p.description.replace(/\*\*/g, '')} Stack: ${stackNames(p)}.`, body);
+
+  // Fila de botones: [Demo en vivo] en la primera imagen, [Ver repositorio] en la segunda.
+  const h = BTN_H + 22;
+  const leftW = W * SPLIT;
+  const rightW = W - leftW;
+  const left = `M0.5 0V${h - 12.5}Q0.5 ${h - 0.5} 12.5 ${h - 0.5}H${leftW}`;
+  const right = `M0 ${h - 0.5}H${rightW - 12.5}Q${rightW - 0.5} ${h - 0.5} ${rightW - 0.5} ${h - 12.5}V0`;
+  const demo = svg(leftW, h, `${p.title}: ${DATA.labels.demo}`, `<path d="${left}V0Z" fill="${C.surface}"/><path d="${left}" fill="none" stroke="${C.border}"/>${actionButton(pad, 0, 'primary', 'external-link', DATA.labels.demo)}`);
+  const repo = svg(rightW, h, `${p.title}: ${DATA.labels.repo}`, `<path d="${right}H0Z" fill="${C.surface}"/><path d="${right}" fill="none" stroke="${C.border}"/>${actionButton(pad + BTN_W + 10 - leftW, 0, 'secondary', 'github', DATA.labels.repo)}`);
+  return { main, demo, repo };
 }
 
+/** Tarjeta de proyecto (toda la tarjeta es el link al repositorio; el botón lo deja claro). */
 function projectCard(p, [index, count], height) {
   const { slotW, cardW: w, x } = slot(index, count);
   const pad = 22;
-  const innerW = w - pad * 2;
-  let y = 34 + 26;
-  let teamMarkup = '';
-  if (p.team) {
-    const b = badge(pad, y - 4, 'users', p.team, C.muted, C.surface2);
-    teamMarkup = b.markup;
-    y += 30;
-  }
-  const titleLines = wrapRich(p.title, innerW - 64, 17.5, SANS_BOLD_EM);
-  const descLines = wrapRich(p.description, innerW, 13.5);
-  const titleY = y + 12;
-  y = titleY + (titleLines.length - 1) * 24 + 26;
-  const descY = y;
-  y += (descLines.length - 1) * 21 + 22;
-  const chips = chipRows(p.stack, pad, y, innerW);
-  y += chips.height + pad;
+  let y = 52;
+  const team = p.team ? badge(pad, y, 'users', p.team, C.muted, C.surface2) : '';
+  if (p.team) y += 32;
+  const titleLines = wrapRich(p.title, w - pad * 2 - 52, 17, SANS_BOLD_EM);
+  const titleY = y + 18;
+  y = titleY + (titleLines.length - 1) * 23;
+  const descLines = wrapRich(p.description, w - pad * 2, 13.5);
+  const descY = y + 25;
+  y = descY + (descLines.length - 1) * 20 + 16;
+  const chips = chipRows(p.stack, pad, y, w - pad * 2);
+  y += chips.height + 18 + BTN_H + 20;
   const H = height ?? y;
   const body = `<g transform="translate(${x} 0)">${card(0, 0, w, H)}
   ${resourceBar(0, 0, w, `/proyectos/${p.slug}`)}
-  ${card(w - pad - 44, 48, 44, 44, C.console, C.cborder, 10)}${icon(p.icon, w - pad - 33, 59, 22, p.accent)}
-  ${teamMarkup}
-  ${renderRichLines(titleLines, pad, titleY, 24, 'fg', 17.5, 600)}
-  ${renderRichLines(descLines, pad, descY, 21, 'soft', 13.5)}
-  ${chips.markup}</g>`;
-  return { height: y, svg: svg(slotW, H,`${p.title}${p.team ? ` (${p.team})` : ''}. ${p.description} Stack: ${p.stack.map(([, n]) => n).join(', ')}.`, body) };
-}
-
-function contact() {
-  const top = BODY_TOP;
-  const pad = 24;
-  const textLines = wrapRich(DATA.contactText, 360, 15);
-  const json = jsonLines(DATA.contactJson);
-  const box = { x: 420, y: top + pad, w: W - 420 - pad, h: 34 + 16 + json.length * 16 + 12 };
-  const H = top + pad + Math.max(box.h, textLines.length * 25 + 20) + pad;
-  const body = `${opblock('POST', '/contacto', 'Contacto', '201 Created')}
-  ${card(0, top, W, H - top)}
-  ${renderRichLines(textLines, pad, top + pad + 22, 25, 'soft', 15)}
-  ${card(box.x, box.y, box.w, box.h, C.console, C.cborder, 10)}
-  <path d="M${box.x + 0.5} ${box.y + 32.5}V${box.y + 10.5}Q${box.x + 0.5} ${box.y + 0.5} ${box.x + 10.5} ${box.y + 0.5}H${box.x + box.w - 10.5}Q${box.x + box.w - 0.5} ${box.y + 0.5} ${box.x + box.w - 0.5} ${box.y + 10.5}V${box.y + 32.5}Z" fill="${C.bar}"/>
-  <line x1="${box.x}" y1="${box.y + 32.5}" x2="${box.x + box.w}" y2="${box.y + 32.5}" stroke="${C.cborder}"/>
-  <text x="${box.x + 14}" y="${box.y + 21}" class="mono" font-size="11">Respuesta</text>
-  <text x="${box.x + box.w - 14}" y="${box.y + 21}" text-anchor="end" class="mono ok" font-size="11">201 Created</text>
-  ${json.map((line, i) => `<text x="${box.x + 16}" y="${box.y + 34 + 22 + i * 16}" class="mono" font-size="11.5" xml:space="preserve">${line}</text>`).join('')}`;
-  return svg(W, H, `POST /contacto — ${DATA.contactText} Email: ${DATA.contactJson.email}. LinkedIn: ${DATA.contactJson.linkedin}.`, body);
+  ${card(w - pad - 40, 50, 40, 40, C.console, C.cborder, 10)}${icon(p.icon, w - pad - 30, 60, 20, p.accent)}
+  ${team}
+  ${renderRichLines(titleLines, pad, titleY, 23, 'fg', 17, 600)}
+  ${renderRichLines(descLines, pad, descY, 20, 'soft', 13.5)}
+  ${chips.markup}
+  ${actionButton(pad, H - 20 - BTN_H, 'secondary', 'github', DATA.labels.repo)}</g>`;
+  return { height: y, svg: svg(slotW, H, `${p.title}${p.team ? ` (${p.team})` : ''}. ${p.description} Stack: ${stackNames(p)}. ${DATA.labels.repo}.`, body) };
 }
 
 /* -------------------------------------------------------------------------- */
@@ -697,17 +598,18 @@ await mkdir(OUT, { recursive: true });
 
 const files = {
   'hero.svg': hero(),
-  'about.svg': about(),
   'stack.svg': stack(),
   'experience.svg': experience(),
   'h-proyectos.svg': headerOnly('GET', '/proyectos', 'Proyectos', '200 OK'),
   'h-monitor.svg': headerOnly('GET', '/monitor', 'Actividad en GitHub', '200 OK'),
-  'contact.svg': contact(),
 };
 DATA.buttons.forEach((b) => { files[b.file] = button(b); });
 
 const [featured, ...rest] = DATA.projects;
-files[`project-${featured.slug}.svg`] = projectFeatured(featured);
+const featuredParts = projectFeatured(featured);
+files[`project-${featured.slug}.svg`] = featuredParts.main;
+files[`project-${featured.slug}-demo.svg`] = featuredParts.demo;
+files[`project-${featured.slug}-repo.svg`] = featuredParts.repo;
 // Grilla de 2 columnas: las dos tarjetas de cada fila tienen el mismo alto.
 for (let i = 0; i < rest.length; i += 2) {
   const row = rest.slice(i, i + 2);
