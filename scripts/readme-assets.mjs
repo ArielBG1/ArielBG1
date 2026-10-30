@@ -58,7 +58,7 @@ const DATA = {
       slug: 'cyclo', icon: 'recycle', accent: '#10b981',
       title: 'Cyclo — Plataforma de economía circular',
       role: 'Desarrollador full stack · Líder técnico',
-      description: 'App ciudadana de reciclaje con mapa interactivo, reconocimiento de materiales por cámara y gamificación. Lideré el desarrollo en el **Global Green Challenge**, junto a INHA University (Corea del Sur).',
+      description: 'App ciudadana de reciclaje con mapa, reconocimiento de materiales por cámara y gamificación. Lideré el desarrollo en el **Global Green Challenge**, junto a INHA University (Corea del Sur).',
       stack: [['skill-icons:react-dark', 'React'], ['skill-icons:vite-dark', 'Vite'], ['skill-icons:tailwindcss-dark', 'Tailwind CSS'], ['skill-icons:nodejs-dark', 'Node.js'], ['skill-icons:expressjs-dark', 'Express'], ['skill-icons:postgresql-dark', 'PostgreSQL + PostGIS'], ['skill-icons:tensorflow-dark', 'TensorFlow.js']],
     },
     {
@@ -70,13 +70,13 @@ const DATA = {
     {
       slug: 'facial-attendance', icon: 'scan-face', accent: '#7c6cf2',
       title: 'Asistencia con reconocimiento facial',
-      description: 'Marcación docente que valida horario, proximidad GPS e identidad facial con anti-spoofing.',
+      description: 'Marcación docente con validación facial y por GPS.',
       stack: [['skill-icons:python-dark', 'Python'], ['skill-icons:flask-dark', 'Flask'], ['skill-icons:opencv-dark', 'OpenCV'], ['devicon:microsoftsqlserver', 'SQL Server']],
     },
     {
       slug: 'ticket-support', icon: 'ticket', accent: '#7c6cf2', team: 'Proyecto en equipo',
       title: 'Soporte por tickets',
-      description: 'Mesa de ayuda para registrar y dar seguimiento a tickets de soporte.',
+      description: 'Mesa de ayuda para gestionar tickets de soporte.',
       stack: [['skill-icons:nodejs-dark', 'Node.js'], ['skill-icons:javascript', 'JavaScript']],
     },
     {
@@ -102,8 +102,8 @@ const W = 880;
 // Las imágenes de una misma fila van pegadas en el README (sin espacios entre medio), así que la separación
 // horizontal va dentro de cada SVG. Verticalmente GitHub deja ~6 px entre imágenes: GAP es parecido.
 const GAP = 7;
-const SECTION_TOP = 32; // aire antes de cada sección
-const HEAD = 78; // alto del encabezado de sección
+const SECTION_TOP = 28; // aire antes de cada sección
+const HEAD = 52; // alto del encabezado de sección
 const BODY_TOP = SECTION_TOP + HEAD + GAP;
 const BTN_W = 189;
 const BTN_H = 38;
@@ -147,7 +147,7 @@ async function loadIcons() {
   DATA.stack.forEach((layer) => { add(layer.icon); layer.items.forEach(([id]) => add(id)); });
   DATA.projects.forEach((p) => { add(p.icon); p.stack.forEach(([id]) => add(id)); });
   DATA.buttons.forEach((b) => { add(b.icon); add(b.arrow); });
-  ['map-pin', 'terminal', 'calendar', 'user-round-cog', 'users', 'external-link', 'github'].forEach(add);
+  ['map-pin', 'terminal', 'calendar', 'user-round-cog', 'external-link', 'github'].forEach(add);
 
   for (const [prefix, names] of wanted) {
     const url = `https://api.iconify.design/${prefix}.json?icons=${[...names].join(',')}`;
@@ -294,21 +294,26 @@ ${body}
 `;
 }
 
-/** Encabezado de sección estilo Swagger (como los del portafolio, pero sin flecha: en GitHub no se puede colapsar). */
+/**
+ * Encabezado de sección estilo Swagger en una línea: método, ruta y título (como el resumen de una operación).
+ * Sin flecha: en GitHub no se puede colapsar.
+ */
 function opblock(method, path, title, status, y = SECTION_TOP, height = HEAD) {
   const op = OP[method];
   const pillW = method.length * 8.6 + 18;
-  const pathX = 24 + pillW + 12;
-  const pathW = textWidth(path, 14, MONO_EM);
+  const pathX = 20 + pillW + 12;
+  const titleX = pathX + textWidth(path, 14, MONO_EM) + 8;
+  const titleW = textWidth(title, 16, SANS_BOLD_EM);
   const statusW = textWidth(status, 13, MONO_EM);
+  const mid = height / 2;
   return `<g transform="translate(0 ${y})">
   <rect x="0.5" y="0.5" width="${W - 1}" height="${height - 1}" rx="12" fill="${op.tint}" stroke="${op.border}"/>
-  <rect x="24" y="16" width="${pillW}" height="22" rx="5" fill="${op.solid}"/>
-  <text x="${24 + pillW / 2}" y="31.5" text-anchor="middle" class="mono" font-size="12" font-weight="600" fill="#0b0b14" letter-spacing="0.6">${method}</text>
-  <text x="${pathX}" y="32" class="mono fg" font-size="14">${esc(path)}</text>
-  <line x1="${pathX + pathW + 14}" y1="27.5" x2="${W - 24 - statusW - 14}" y2="27.5" stroke="${C.muted}" stroke-opacity="0.35" stroke-dasharray="3 4"/>
-  <text x="${W - 24}" y="32" text-anchor="end" class="mono ok" font-size="13">${esc(status)}</text>
-  <text x="24" y="62" class="fg" font-size="22" font-weight="600" letter-spacing="-0.3">${esc(title)}</text>
+  <rect x="20" y="${mid - 11}" width="${pillW}" height="22" rx="5" fill="${op.solid}"/>
+  <text x="${20 + pillW / 2}" y="${mid + 4.5}" text-anchor="middle" class="mono" font-size="12" font-weight="600" fill="#0b0b14" letter-spacing="0.6">${method}</text>
+  <text x="${pathX}" y="${mid + 5}" class="mono fg" font-size="14">${esc(path)}</text>
+  <text x="${titleX}" y="${mid + 5.5}" class="fg" font-size="16" font-weight="600">${esc(title)}</text>
+  <line x1="${titleX + titleW + 14}" y1="${mid + 0.5}" x2="${W - 20 - statusW - 14}" y2="${mid + 0.5}" stroke="${C.muted}" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+  <text x="${W - 20}" y="${mid + 5}" text-anchor="end" class="mono ok" font-size="13">${esc(status)}</text>
 </g>`;
 }
 
@@ -568,12 +573,9 @@ function projectFeatured(p) {
 function projectCard(p, [index, count], height) {
   const { slotW, cardW: w, x } = slot(index, count);
   const pad = 22;
-  let y = 52;
-  const team = p.team ? badge(pad, y, 'users', p.team, C.muted, C.surface2) : '';
-  if (p.team) y += 32;
-  const titleLines = wrapRich(p.title, w - pad * 2 - 52, 17, SANS_BOLD_EM);
-  const titleY = y + 18;
-  y = titleY + (titleLines.length - 1) * 23;
+  const titleLines = wrapRich(p.title, w - pad * 2 - 48, 16.5, SANS_BOLD_EM);
+  const titleY = 76;
+  let y = titleY + (titleLines.length - 1) * 22;
   const descLines = wrapRich(p.description, w - pad * 2, 13.5);
   const descY = y + 25;
   y = descY + (descLines.length - 1) * 20 + 16;
@@ -583,8 +585,7 @@ function projectCard(p, [index, count], height) {
   const body = `<g transform="translate(${x} 0)">${card(0, 0, w, H)}
   ${resourceBar(0, 0, w, `/proyectos/${p.slug}`)}
   ${card(w - pad - 40, 50, 40, 40, C.console, C.cborder, 10)}${icon(p.icon, w - pad - 30, 60, 20, p.accent)}
-  ${team}
-  ${renderRichLines(titleLines, pad, titleY, 23, 'fg', 17, 600)}
+  ${renderRichLines(titleLines, pad, titleY, 22, 'fg', 16.5, 600)}
   ${renderRichLines(descLines, pad, descY, 20, 'soft', 13.5)}
   ${chips.markup}
   ${actionButton(pad, H - 20 - BTN_H, 'secondary', 'github', DATA.labels.repo)}</g>`;

@@ -10,9 +10,7 @@
 <a href="https://github.com/ArielBG1/Cyclo"><img src="./assets/project-cyclo.svg" width="100%" align="top" alt="Cyclo — Plataforma de economía circular. Rol: desarrollador full stack y líder técnico" /></a>
 <a href="https://cyclo-nine.vercel.app"><img src="./assets/project-cyclo-demo.svg" width="25%" alt="Cyclo: demo en vivo" /></a><a href="https://github.com/ArielBG1/Cyclo"><img src="./assets/project-cyclo-repo.svg" width="75%" alt="Cyclo: ver repositorio" /></a>
 <a href="https://github.com/ArielBG1/DespensaAPP"><img src="./assets/project-despensa-app.svg" width="50%" alt="DespensaAPP — POS e inventario: ver repositorio" /></a><a href="https://github.com/ArielBG1/sistema_marcacion_docente"><img src="./assets/project-facial-attendance.svg" width="50%" alt="Asistencia con reconocimiento facial: ver repositorio" /></a>
-<a href="https://github.com/ArielBG1/soporte_ticket"><img src="./assets/project-ticket-support.svg" width="50%" alt="Soporte por tickets: ver repositorio" /></a><a href="https://github.com/ArielBG1/Torotech-LandingPage"><img src="./assets/project-torotech-landing.svg" width="50%" alt="Torotech — Landing Page: ver repositorio" /></a>
+<a href="https://github.com/ArielBG1/soporte_ticket"><img src="./assets/project-ticket-support.svg" width="50%" alt="Soporte por tickets (proyecto en equipo): ver repositorio" /></a><a href="https://github.com/ArielBG1/Torotech-LandingPage"><img src="./assets/project-torotech-landing.svg" width="50%" alt="Torotech — Landing Page: ver repositorio" /></a>
 <img src="./assets/h-monitor.svg" width="100%" alt="GET /monitor — Actividad en GitHub" />
-<img src="https://raw.githubusercontent.com/ArielBG1/ArielBG1/output/api-monitor.svg" width="100%" alt="API monitor: mis contribuciones en GitHub de los últimos 12 meses como requests por día, con total, racha actual, racha máxima y día pico" />
-<img src="https://raw.githubusercontent.com/ArielBG1/ArielBG1/output/api-langs.svg" width="100%" alt="Lenguajes más usados en mis repositorios públicos" />
-<img src="./assets/footer.svg" width="100%" alt="PS C:\ariel-bogado> whoami → ariel-bogado" />
+<img src="https://raw.githubusercontent.com/ArielBG1/ArielBG1/output/api-monitor-compact.svg" width="100%" alt="API monitor: mis contribuciones en GitHub de los últimos 12 meses como requests por día" />
 </div>
