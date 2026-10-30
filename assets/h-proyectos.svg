@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="116" viewBox="0 0 880 116" role="img" aria-labelledby="t">
+<title id="t">GET /proyectos — Proyectos</title>
+<style>
+  text { font-family: 'IBM Plex Sans','Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif; }
+  /* Especificidad 0 (:where) para que ganen las clases, y :not([...]) para no pisar los atributos fill/font-size. */
+  :where(text:not([fill])) { fill: #9a9ab0; }
+  :where(text:not([font-size])) { font-size: 13px; }
+  .mono { font-family: 'IBM Plex Mono','Fira Code',Consolas,Menlo,monospace; }
+  .fg { fill: #e6e6f0; }
+  .soft { fill: #c9c9d9; }
+  .brand { fill: #a397f7; }
+  .ok { fill: #10b981; }
+  .k { fill: #a397f7; } .s { fill: #34d399; } .n { fill: #38bdf8; } .p { fill: #8b8ba3; }
+  
+</style>
+<g transform="translate(0 32)">
+  <rect x="0.5" y="0.5" width="879" height="83" rx="12" fill="#121e2c" stroke="#155d79"/>
+  <rect x="24" y="18" width="43.8" height="22" rx="5" fill="#00b4d8"/>
+  <text x="45.9" y="33.5" text-anchor="middle" class="mono" font-size="12" font-weight="600" fill="#0b0b14" letter-spacing="0.6">GET</text>
+  <text x="79.8" y="34" class="mono fg" font-size="14">/proyectos</text>
+  <line x1="179.2" y1="29.5" x2="794.42" y2="29.5" stroke="#9a9ab0" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+  <text x="856" y="34" text-anchor="end" class="mono ok" font-size="13">200 OK</text>
+  <text x="24" y="68" class="fg" font-size="25" font-weight="600" letter-spacing="-0.4">Proyectos</text>
+  <svg x="836" y="50" width="20" height="20" viewBox="0 0 24 24" color="#9a9ab0"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></svg>
+</g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="293.3333333333333" height="60" viewBox="0 0 293.3333333333333 60" role="img" aria-labelledby="t">
+<title id="t">LinkedIn: in/arielbogadogimenez</title>
+<style>
+  text { font-family: 'IBM Plex Sans','Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif; }
+  /* Especificidad 0 (:where) para que ganen las clases, y :not([...]) para no pisar los atributos fill/font-size. */
+  :where(text:not([fill])) { fill: #9a9ab0; }
+  :where(text:not([font-size])) { font-size: 13px; }
+  .mono { font-family: 'IBM Plex Mono','Fira Code',Consolas,Menlo,monospace; }
+  .fg { fill: #e6e6f0; }
+  .soft { fill: #c9c9d9; }
+  .brand { fill: #a397f7; }
+  .ok { fill: #10b981; }
+  .k { fill: #a397f7; } .s { fill: #34d399; } .n { fill: #38bdf8; } .p { fill: #8b8ba3; }
+  
+</style>
+<g transform="translate(2.3333333333333712 0)"><rect x="0.5" y="0.5" width="287.6666666666667" height="59" rx="12" fill="#13131f" stroke="#23233a"/>
+  <rect x="10" y="10" width="40" height="40" rx="9" fill="#512bd4"/>
+  <svg x="20" y="20" width="20" height="20" viewBox="0 0 24 24" color="#ffffff"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></g></svg>
+  <text x="62" y="27" class="fg" font-size="15" font-weight="600">LinkedIn</text>
+  <text x="62" y="45" class="mono" font-size="11">in/arielbogadogimenez</text>
+  <svg x="256.6666666666667" y="21" width="18" height="18" viewBox="0 0 24 24" color="#9a9ab0"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"/></svg></g>
+</svg>

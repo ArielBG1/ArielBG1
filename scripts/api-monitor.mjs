@@ -10,8 +10,9 @@
  * - Sin token (o si GraphQL falla) lee el calendario público de contribuciones del perfil.
  * - `--html` permite pasar un calendario ya descargado (útil para probar sin red).
  *
- * Genera 4 archivos: api-monitor.svg (es, oscuro), api-monitor-light.svg (es, claro),
- * api-monitor-en.svg y api-monitor-en-light.svg. Sin dependencias: solo Node 20+.
+ * Genera api-monitor.svg (es, oscuro), api-monitor-light.svg (es, claro), api-monitor-en.svg y
+ * api-monitor-en-light.svg, y lo mismo para el panel de lenguajes de los repos públicos (api-langs*.svg).
+ * Sin dependencias: solo Node 20+.
  */
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -37,6 +38,18 @@ if (!args.user) {
 /* -------------------------------------------------------------------------- */
 
 /** @typedef {{ date: string, count: number }} Day */
+/** @typedef {{ name: string, color: string | null, size: number }} Lang */
+
+async function graphql(query, variables, token) {
+  const response = await fetch('https://api.github.com/graphql', {
+    method: 'POST',
+    headers: { Authorization: `bearer ${token}`, 'Content-Type': 'application/json', 'User-Agent': 'api-monitor' },
+    body: JSON.stringify({ query, variables }),
+  });
+  const json = await response.json();
+  if (!response.ok || json.errors) throw new Error(`GraphQL: ${response.status} ${JSON.stringify(json.errors ?? json)}`);
+  return json.data;
+}
 
 /** Calendario del último año vía GraphQL (requiere token). @returns {Promise<Day[]>} */
 async function fromGraphQL(user, token) {
@@ -49,16 +62,58 @@ async function fromGraphQL(user, token) {
       }
     }
   }`;
-  const response = await fetch('https://api.github.com/graphql', {
-    method: 'POST',
-    headers: { Authorization: `bearer ${token}`, 'Content-Type': 'application/json', 'User-Agent': 'api-monitor' },
-    body: JSON.stringify({ query, variables: { login: user } }),
-  });
-  const json = await response.json();
-  if (!response.ok || json.errors) throw new Error(`GraphQL: ${response.status} ${JSON.stringify(json.errors ?? json)}`);
-  return json.data.user.contributionsCollection.contributionCalendar.weeks
+  const data = await graphql(query, { login: user }, token);
+  return data.user.contributionsCollection.contributionCalendar.weeks
     .flatMap((week) => week.contributionDays)
     .map((day) => ({ date: day.date, count: day.contributionCount }));
+}
+
+/** Bytes de código por lenguaje en los repos públicos propios (sin forks), vía GraphQL. */
+async function langsFromGraphQL(user, token) {
+  const query = `query ($login: String!) {
+    user(login: $login) {
+      repositories(first: 100, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC) {
+        nodes { languages(first: 20, orderBy: { field: SIZE, direction: DESC }) { edges { size node { name color } } } }
+      }
+    }
+  }`;
+  const repos = (await graphql(query, { login: user }, token)).user.repositories.nodes;
+  /** @type {Map<string, Lang>} */
+  const langs = new Map();
+  for (const repo of repos) {
+    for (const { size, node } of repo.languages.edges) {
+      langs.set(node.name, { name: node.name, color: node.color, size: (langs.get(node.name)?.size ?? 0) + size });
+    }
+  }
+  return { repos: repos.length, langs: [...langs.values()] };
+}
+
+// La API REST no devuelve colores: estos son los de GitHub (linguist) para los lenguajes más comunes.
+const LANG_COLORS = {
+  'C#': '#178600', JavaScript: '#f1e05a', TypeScript: '#3178c6', HTML: '#e34c26', CSS: '#563d7c', SCSS: '#c6538c',
+  Python: '#3572A5', Java: '#b07219', PHP: '#4F5D95', Go: '#00ADD8', Kotlin: '#A97BFF', Dart: '#00B4AB', C: '#555555',
+  'C++': '#f34b7d', Shell: '#89e051', PowerShell: '#012456', Dockerfile: '#384d54', TSQL: '#e38c00', PLpgSQL: '#336790',
+  Vue: '#41b883', 'Jupyter Notebook': '#DA5B0B', Batchfile: '#C1F12E', EJS: '#a91e50', Handlebars: '#f7931e',
+};
+
+/** Lo mismo con la API REST pública (sin token). */
+async function langsFromRest(user) {
+  const headers = { 'User-Agent': 'api-monitor', Accept: 'application/vnd.github+json' };
+  const get = async (url) => {
+    const response = await fetch(url, { headers });
+    const json = await response.json();
+    if (!response.ok) throw new Error(`REST ${url}: ${response.status} ${json.message ?? ''}`);
+    return json;
+  };
+  const repos = (await get(`https://api.github.com/users/${user}/repos?per_page=100&type=owner`)).filter((repo) => !repo.fork);
+  /** @type {Map<string, Lang>} */
+  const langs = new Map();
+  for (const repo of repos) {
+    for (const [name, size] of Object.entries(await get(repo.languages_url))) {
+      langs.set(name, { name, color: LANG_COLORS[name] ?? null, size: (langs.get(name)?.size ?? 0) + size });
+    }
+  }
+  return { repos: repos.length, langs: [...langs.values()] };
 }
 
 /** Calendario público del perfil (el mismo HTML que muestra GitHub). @returns {Promise<Day[]>} */
@@ -131,6 +186,9 @@ const LABELS = {
     peak: 'día pico',
     desc: (s, user, peakDate) =>
       `${user}: ${s.total} contribuciones en GitHub en los últimos 12 meses. Racha actual: ${s.current} días. Racha máxima: ${s.longest} días. Día pico: ${s.peak.count} contribuciones el ${peakDate}.`,
+    langs: 'lenguajes',
+    langsInfo: (repos) => `${repos} repos públicos · % del código`,
+    langsDesc: (user, list) => `${user}: lenguajes más usados en sus repositorios públicos. ${list}.`,
   },
   en: {
     title: 'API monitor',
@@ -145,6 +203,9 @@ const LABELS = {
     peak: 'peak day',
     desc: (s, user, peakDate) =>
       `${user}: ${s.total} GitHub contributions in the last 12 months. Current streak: ${s.current} days. Longest streak: ${s.longest} days. Peak day: ${s.peak.count} contributions on ${peakDate}.`,
+    langs: 'languages',
+    langsInfo: (repos) => `${repos} public repos · % of code`,
+    langsDesc: (user, list) => `${user}: most used languages in their public repositories. ${list}.`,
   },
 };
 
@@ -158,6 +219,9 @@ const THEMES = {
     key: '#512bd4', ok: '#047857', grid: '#e4e4ee', zero: '#dcdce8', from: '#512bd4', mid: '#6d5df0', to: '#0b6e8f', scan: '#0b6e8f',
   },
 };
+
+const MONO = "'IBM Plex Mono','Fira Code',Consolas,Menlo,monospace";
+const SANS = "'IBM Plex Sans','Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif";
 
 const escapeXml = (text) => String(text).replace(/[<>&"']/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' })[c]);
 const toUtc = (iso) => new Date(`${iso}T00:00:00Z`);
@@ -178,8 +242,8 @@ function renderSvg(days, stats, { user, handle, lang, theme, updated }) {
   const max = Math.max(1, stats.peak.count);
   // Escala con raíz para que los días chicos se sigan viendo al lado de un pico grande.
   const barHeight = (count) => (count > 0 ? Math.max(3, Math.pow(count / max, 0.6) * chart.h) : 1.5);
-  const font = "'IBM Plex Mono','Fira Code',Consolas,Menlo,monospace";
-  const sans = "'IBM Plex Sans','Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif";
+  const font = MONO;
+  const sans = SANS;
 
   const bars = days
     .map((day, i) => {
@@ -298,6 +362,77 @@ function renderSvg(days, stats, { user, handle, lang, theme, updated }) {
 `;
 }
 
+/**
+ * Panel de lenguajes, con el mismo diseño que el monitor: barra apilada + una tarjeta por lenguaje.
+ * @param {Lang[]} langs ordenados de mayor a menor
+ */
+function renderLangsSvg(langs, repos, { user, handle, lang, theme }) {
+  const t = LABELS[lang];
+  const c = THEMES[theme];
+  const W = 880;
+  const PAD = 20;
+  const TOP = 6;
+  const total = langs.reduce((sum, l) => sum + l.size, 0);
+  const top = langs.slice(0, TOP).map((l) => ({ ...l, share: l.size / total }));
+  const percent = new Intl.NumberFormat(lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const colorOf = (l) => l.color ?? c.muted;
+
+  const bar = { x: PAD, y: 62, w: W - PAD * 2, h: 10 };
+  let x = bar.x;
+  // El resto (lenguajes fuera del top) queda como el fondo de la barra.
+  const segments = top
+    .map((l, i) => {
+      const w = l.share * bar.w;
+      const markup = `<rect class="seg" x="${x.toFixed(2)}" y="${bar.y}" width="${Math.max(0, w - 2).toFixed(2)}" height="${bar.h}" fill="${colorOf(l)}" style="animation-delay:${i * 90}ms"/>`;
+      x += w;
+      return markup;
+    })
+    .join('');
+
+  const gap = 12;
+  const boxY = 92;
+  const boxW = (W - PAD * 2 - gap * (top.length - 1)) / top.length;
+  const boxes = top
+    .map((l, i) => `<g transform="translate(${(PAD + i * (boxW + gap)).toFixed(1)} ${boxY})">
+      <rect width="${boxW.toFixed(1)}" height="46" rx="8" fill="${c.card}" stroke="${c.border}"/>
+      <circle cx="15" cy="13.5" r="4" fill="${colorOf(l)}"/>
+      <text x="25" y="17" class="kl">${escapeXml(l.name)}</text>
+      <text x="12" y="37" class="kv">${percent.format(l.share * 100)}<tspan class="ku" dx="3">%</tspan></text>
+    </g>`)
+    .join('');
+
+  const H = boxY + 46 + PAD;
+  const list = top.map((l) => `${l.name} ${percent.format(l.share * 100)} %`).join(', ');
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="t d">
+  <title id="t">${escapeXml(`${handle} · ${t.langs}`)}</title>
+  <desc id="d">${escapeXml(t.langsDesc(user, list))}</desc>
+  <defs><clipPath id="bar"><rect x="${bar.x}" y="${bar.y}" width="${bar.w}" height="${bar.h}" rx="${bar.h / 2}"/></clipPath></defs>
+  <style>
+    text { font-family: ${MONO}; fill: ${c.muted}; font-size: 11px; }
+    .title { fill: ${c.fg}; font-size: 13px; font-weight: 600; }
+    .key { fill: ${c.key}; font-size: 13px; font-weight: 600; }
+    .kl { font-size: 10.5px; }
+    .kv { fill: ${c.fg}; font-family: ${SANS}; font-size: 18px; font-weight: 600; }
+    .ku { fill: ${c.muted}; font-family: ${MONO}; font-size: 11px; font-weight: 400; }
+    .seg { transform-box: fill-box; transform-origin: 0 50%; animation: grow 0.8s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @media (prefers-reduced-motion: reduce) { .seg { animation: none; } }
+  </style>
+
+  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="12" fill="${c.bg}" stroke="${c.border}"/>
+  <path d="M0.5 40.5 V12.5 Q0.5 0.5 12.5 0.5 H${W - 12.5} Q${W - 0.5} 0.5 ${W - 0.5} 12.5 V40.5 Z" fill="${c.bar}"/>
+  <line x1="0" y1="40.5" x2="${W}" y2="40.5" stroke="${c.border}"/>
+  <text x="${PAD}" y="25" class="key">{ }</text>
+  <text x="${PAD + 26}" y="25" class="title">${escapeXml(handle)}<tspan class="ku" dx="8">· ${escapeXml(t.langs)}</tspan></text>
+  <text x="${W - PAD}" y="25" text-anchor="end">${escapeXml(t.langsInfo(repos))}</text>
+
+  <rect x="${bar.x}" y="${bar.y}" width="${bar.w}" height="${bar.h}" rx="${bar.h / 2}" fill="${c.zero}"/>
+  <g clip-path="url(#bar)">${segments}</g>
+  ${boxes}
+</svg>
+`;
+}
+
 /* -------------------------------------------------------------------------- */
 
 const token = process.env.GITHUB_TOKEN;
@@ -324,7 +459,31 @@ const outputs = [
   ['api-monitor-en.svg', 'en', 'dark'],
   ['api-monitor-en-light.svg', 'en', 'light'],
 ];
+const handle = args.handle ?? args.user.toLowerCase();
 for (const [file, lang, theme] of outputs) {
-  await writeFile(join(args.out, file), renderSvg(days, stats, { user: args.user, handle: args.handle ?? args.user.toLowerCase(), lang, theme, updated }));
+  await writeFile(join(args.out, file), renderSvg(days, stats, { user: args.user, handle, lang, theme, updated }));
   console.log(`  ${join(args.out, file)}`);
+}
+
+// Lenguajes (necesitan red: con --html, que es para probar sin red, se omiten).
+if (args.html) {
+  console.log('Con --html no se generan los lenguajes.');
+} else {
+  let languages;
+  if (token) {
+    try {
+      languages = await langsFromGraphQL(args.user, token);
+    } catch (error) {
+      console.warn(`GraphQL (lenguajes) falló (${error.message}); uso la API REST.`);
+    }
+  }
+  languages ??= await langsFromRest(args.user);
+  const langs = languages.langs.filter((l) => l.size > 0).sort((a, b) => b.size - a.size);
+  if (langs.length === 0) throw new Error('No hay lenguajes para mostrar.');
+  console.log(`Lenguajes (${languages.repos} repos): ${langs.slice(0, 6).map((l) => l.name).join(', ')}`);
+  for (const [file, lang, theme] of outputs) {
+    const name = file.replace('api-monitor', 'api-langs');
+    await writeFile(join(args.out, name), renderLangsSvg(langs, languages.repos, { user: args.user, handle, lang, theme }));
+    console.log(`  ${join(args.out, name)}`);
+  }
 }

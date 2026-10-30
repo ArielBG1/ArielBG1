@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="225" viewBox="0 0 440 225" role="img" aria-labelledby="t">
+<title id="t">Torotech — Landing Page. Landing page para Torotech, la plataforma educativa del Instituto Técnico Superior Santa María del Rosario (ITSSMAR). Stack: HTML, CSS.</title>
+<style>
+  text { font-family: 'IBM Plex Sans','Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif; }
+  /* Especificidad 0 (:where) para que ganen las clases, y :not([...]) para no pisar los atributos fill/font-size. */
+  :where(text:not([fill])) { fill: #9a9ab0; }
+  :where(text:not([font-size])) { font-size: 13px; }
+  .mono { font-family: 'IBM Plex Mono','Fira Code',Consolas,Menlo,monospace; }
+  .fg { fill: #e6e6f0; }
+  .soft { fill: #c9c9d9; }
+  .brand { fill: #a397f7; }
+  .ok { fill: #10b981; }
+  .k { fill: #a397f7; } .s { fill: #34d399; } .n { fill: #38bdf8; } .p { fill: #8b8ba3; }
+  
+</style>
+<g transform="translate(3.5 0)"><rect x="0.5" y="0.5" width="435.5" height="224" rx="12" fill="#13131f" stroke="#23233a"/>
+  <path d="M0.5 34.5V12.5Q0.5 0.5 12.5 0.5H424Q436 0.5 436 12.5V34.5Z" fill="#151524"/>
+  <line x1="0" y1="34.5" x2="436.5" y2="34.5" stroke="#262640"/>
+  <rect x="14" y="9" width="34" height="18" rx="4" fill="none" stroke="rgba(0,180,216,0.5)"/>
+  <text x="31" y="22" text-anchor="middle" class="mono" font-size="10.5" font-weight="600" fill="#00b4d8">GET</text>
+  <text x="58" y="22" class="mono" font-size="11.5">/proyectos/torotech-landing</text>
+  <text x="422.5" y="22" text-anchor="end" class="mono ok" font-size="11.5">200</text>
+  <rect x="371" y="48.5" width="43" height="43" rx="10" fill="#0e0e19" stroke="#262640"/><svg x="381.5" y="59" width="22" height="22" viewBox="0 0 24 24" color="#7c6cf2"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></g></svg>
+  
+  <text x="22" y="72" class="fg" font-size="17.5" font-weight="600">Torotech — Landing Page</text>
+  <text x="22" y="98" class="soft" font-size="13.5" font-weight="400">Landing page para Torotech, la plataforma educativa del</text><text x="22" y="119" class="soft" font-size="13.5" font-weight="400">Instituto Técnico Superior Santa María del Rosario</text><text x="22" y="140" class="soft" font-size="13.5" font-weight="400">(ITSSMAR).</text>
+  <rect x="22.5" y="162.5" width="77.6" height="31" rx="8" fill="#1a1a2a" stroke="#23233a"/><svg x="27" y="167" width="22" height="22" viewBox="0 0 256 256"><g fill="none"><rect width="256" height="256" fill="#e14e1d" rx="60"/><path fill="#fff" d="m48 38l8.61 96.593h110.71l-3.715 41.43l-35.646 9.638l-35.579-9.624l-2.379-26.602H57.94l4.585 51.281l65.427 18.172l65.51-18.172l8.783-98.061H85.824l-2.923-32.71h122.238L208 38z"/><path fill="#ebebeb" d="M128 38H48l8.61 96.593H128v-31.938H85.824l-2.923-32.71H128zm0 147.647l-.041.014l-35.579-9.624l-2.379-26.602H57.94l4.585 51.281l65.427 18.172l.049-.014z"/></g></svg><text x="57" y="183" class="soft" font-size="13">HTML</text><rect x="109.1" y="162.5" width="70.45" height="31" rx="8" fill="#1a1a2a" stroke="#23233a"/><svg x="113.6" y="167" width="22" height="22" viewBox="0 0 256 256"><g fill="none"><rect width="256" height="256" fill="#0277bd" rx="60"/><path fill="#ebebeb" d="m53.753 102.651l2.862 31.942h71.481v-31.942zM128.095 38H48l2.904 31.942h77.191zm0 180.841v-33.233l-.14.037l-35.574-9.605l-2.274-25.476H58.042l4.475 50.154l65.431 18.164z"/><path fill="#fff" d="m167.318 134.593l-3.708 41.426l-35.625 9.616v33.231l65.483-18.148l.48-5.397l7.506-84.092l.779-8.578L208 38h-80.015v31.942h45.009l-2.906 32.709h-42.103v31.942z"/></g></svg><text x="143.6" y="183" class="soft" font-size="13">CSS</text></g>
+</svg>
