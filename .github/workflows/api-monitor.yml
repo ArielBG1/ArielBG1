@@ -1,0 +1,39 @@
+name: API monitor
+
+# Genera los SVG del "API monitor" (contribuciones de los últimos 12 meses como requests/día)
+# y los publica en la rama `output`, de donde los toman el README y el portafolio.
+on:
+  schedule:
+    - cron: "0 3 * * *" # 00:00 en Paraguay (UTC-3)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/api-monitor.mjs
+      - .github/workflows/api-monitor.yml
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generar SVGs
+        run: node scripts/api-monitor.mjs --user "${{ github.repository_owner }}" --handle ariel-bogado --out dist
+        env:
+          # Con GH_STATS_TOKEN (PAT) también cuentan las contribuciones privadas, si están visibles en el perfil.
+          GITHUB_TOKEN: ${{ secrets.GH_STATS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Publicar en la rama output
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

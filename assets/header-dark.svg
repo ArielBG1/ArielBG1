@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="230" viewBox="0 0 880 230" role="img" aria-labelledby="t">
+  <title id="t">GET /api/v1/ariel-bogado · 200 OK · Ariel Bogado, Backend Developer · C# / .NET</title>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(230,230,240,0.045)"/></pattern>
+    <radialGradient id="glow" cx="0.15" cy="0" r="0.8"><stop offset="0" stop-color="#512bd4" stop-opacity="0.18"/><stop offset="1" stop-color="#512bd4" stop-opacity="0"/></radialGradient>
+  </defs>
+  <style>
+    text { font-family: 'IBM Plex Mono','Fira Code',Consolas,Menlo,monospace; fill: #9a9ab0; font-size: 12px; }
+    .name { font-family: 'IBM Plex Sans','Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif; font-size: 46px; font-weight: 600; fill: #e6e6f0; letter-spacing: -1px; }
+    .title { font-family: 'IBM Plex Sans','Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif; font-size: 19px; font-weight: 500; fill: #c9c9d9; }
+    .fg { fill: #e6e6f0; font-weight: 600; }
+    .pill { fill: #0b0b14; font-weight: 600; }
+    .sub { fill: #9a9ab0; font-weight: 400; }
+    .key { fill: #a397f7; font-weight: 600; }
+    .path { fill: #e6e6f0; font-size: 15px; animation: type 1s steps(20) 0.3s backwards; }
+    .pending { fill: #f59e0b; opacity: 0; animation: pending 1.5s linear; }
+    .ok { fill: #10b981; animation: show 0.3s ease-out 1.5s backwards; }
+    .dot-p { fill: #f59e0b; opacity: 0; animation: pending 1.5s linear; }
+    .dot-o { fill: #10b981; animation: show 0.3s ease-out 1.5s backwards; }
+    .role { fill: #00b4d8; font-size: 15px; opacity: 0; animation: role 12s linear infinite; }
+    .role.first { opacity: 1; }
+    .prompt { fill: #a397f7; font-size: 15px; }
+    .cursor { fill: #a397f7; animation: blink 1.1s step-end infinite; }
+    @keyframes type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+    @keyframes pending { from, to { opacity: 1; } }
+    @keyframes show { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes role { 0% { opacity: 0; } 2% { opacity: 1; } 23% { opacity: 1; } 25% { opacity: 0; } 100% { opacity: 0; } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .path, .ok, .dot-o, .cursor { animation: none; }
+      .pending, .dot-p { display: none; }
+      .role { animation: none; opacity: 0; }
+      .role.first { opacity: 1; }
+    }
+  </style>
+  <rect x="0.5" y="0.5" width="879" height="229" rx="14" fill="#0e0e19" stroke="#262640"/>
+  <rect x="1" y="41" width="878" height="188" fill="url(#grid)"/>
+  <rect x="1" y="41" width="878" height="188" fill="url(#glow)"/>
+  <path d="M0.5 40.5V14.5Q0.5 0.5 14.5 0.5H865.5Q879.5 0.5 879.5 14.5V40.5Z" fill="#151524"/>
+  <line x1="0" y1="40.5" x2="880" y2="40.5" stroke="#262640"/>
+
+  <text x="22" y="25" class="key">{ }</text>
+  <text x="48" y="25" class="fg">ariel-bogado<tspan class="sub" dx="8">/ API v1</tspan></text>
+  <circle cx="774" cy="21" r="4" class="dot-p"/><circle cx="804" cy="21" r="4" class="dot-o"/>
+  <text x="858" y="25" text-anchor="end" class="pending">pendiente…</text>
+  <text x="858" y="25" text-anchor="end" class="ok">200 OK</text>
+
+  <rect x="22" y="64" width="42" height="22" rx="5" fill="#00b4d8"/>
+  <text x="43" y="79.5" text-anchor="middle" class="pill">GET</text>
+  <text x="76" y="80.5" class="path">/api/v1/ariel-bogado</text>
+
+  <text x="20" y="146" class="name">Ariel Bogado</text>
+  <text x="22" y="176" class="title">Backend Developer · C# / .NET · Paraguay</text>
+
+  <text x="22" y="203" class="prompt">&gt;</text>
+  <text x="40" y="203" class="role first" style="animation-delay:0s">Backend Developer | C# · .NET</text><text x="40" y="203" class="role" style="animation-delay:3s">APIs REST · PostgreSQL · SQL Server</text><text x="40" y="203" class="role" style="animation-delay:6s">Frontend con React + Tailwind</text><text x="40" y="203" class="role" style="animation-delay:9s">Estudiante de Ingeniería Informática</text>
+</svg>
