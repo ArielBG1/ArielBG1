@@ -1,10 +1,8 @@
 <div align="center">
-<!-- Todo va en un único bloque HTML (sin líneas en blanco) y las imágenes de una misma fila van pegadas, sin espacios:
-     las separaciones están dentro de cada SVG, así todo queda alineado. Los paneles se generan con scripts/readme-assets.mjs.
-     align="top" en la tarjeta de Cyclo hace que su fila de botones quede pegada debajo, como parte de la misma tarjeta. -->
+
 <img src="./assets/hero.svg" width="100%" alt="GET /api/v1/ariel-bogado · 200 OK — Ariel Bogado, Backend Developer · C# / .NET · Paraguay" />
 <a href="https://arielbogado.vercel.app"><img src="./assets/btn-portafolio.svg" width="33.33%" alt="Portafolio: arielbogado.vercel.app" /></a><a href="https://www.linkedin.com/in/arielbogadogimenez"><img src="./assets/btn-linkedin.svg" width="33.33%" alt="LinkedIn: in/arielbogadogimenez" /></a><a href="mailto:arielbogadogimenez@gmail.com"><img src="./assets/btn-email.svg" width="33.33%" alt="Email: arielbogadogimenez@gmail.com" /></a>
-<img src="./assets/stack.svg" width="100%" alt="GET /stack — Frontend: React, Vite, Tailwind CSS, Bootstrap, JavaScript, HTML, CSS. Backend: C#, .NET, Node.js, Express, Java, Spring Boot, Python, Flask, FastAPI. Bases de datos: PostgreSQL, MySQL, SQL Server, Oracle" />
+<img src="./assets/stack.svg" width="100%" alt="GET /stack — Frontend: React, Vite, Tailwind CSS, Bootstrap, Astro, JavaScript, HTML, CSS. Backend: C#, .NET, Node.js, Express, Java, Spring Boot, Python, Flask, FastAPI. Bases de datos: PostgreSQL, MySQL, SQL Server, Oracle" />
 <img src="./assets/experience.svg" width="100%" alt="GET /experiencia — Software Developer en la Universidad de la Integración de las Américas (UNIDA), desde abril de 2024: plataforma universitaria en C# con ASP.NET MVC y ASP.NET Core, APIs REST, SQL Server y LINQ, relevamiento de requerimientos y coordinación del equipo de desarrollo" />
 <img src="./assets/h-proyectos.svg" width="100%" alt="GET /proyectos — Proyectos" />
 <a href="https://github.com/ArielBG1/Cyclo"><img src="./assets/project-cyclo.svg" width="100%" align="top" alt="Cyclo — Plataforma de economía circular. Rol: desarrollador full stack y líder técnico" /></a>

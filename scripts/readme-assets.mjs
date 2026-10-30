@@ -38,7 +38,7 @@ const DATA = {
     intereses: ['IA aplicada', 'Sistemas distribuidos'],
   },
   stack: [
-    { label: 'Frontend', icon: 'monitor', items: [['skill-icons:react-dark', 'React'], ['skill-icons:vite-dark', 'Vite'], ['skill-icons:tailwindcss-dark', 'Tailwind CSS'], ['skill-icons:bootstrap', 'Bootstrap'], ['skill-icons:javascript', 'JavaScript'], ['skill-icons:html', 'HTML'], ['skill-icons:css', 'CSS']] },
+    { label: 'Frontend', icon: 'monitor', items: [['skill-icons:react-dark', 'React'], ['skill-icons:vite-dark', 'Vite'], ['skill-icons:tailwindcss-dark', 'Tailwind CSS'], ['skill-icons:bootstrap', 'Bootstrap'], ['skill-icons:astro', 'Astro'], ['skill-icons:javascript', 'JavaScript'], ['skill-icons:html', 'HTML'], ['skill-icons:css', 'CSS']] },
     { label: 'Backend', icon: 'server', items: [['skill-icons:cs', 'C#'], ['skill-icons:dotnet', '.NET'], ['skill-icons:nodejs-dark', 'Node.js'], ['skill-icons:expressjs-dark', 'Express'], ['skill-icons:java-dark', 'Java'], ['skill-icons:spring-dark', 'Spring Boot'], ['skill-icons:python-dark', 'Python'], ['skill-icons:flask-dark', 'Flask'], ['skill-icons:fastapi', 'FastAPI']] },
     { label: 'Bases de datos', icon: 'database', items: [['skill-icons:postgresql-dark', 'PostgreSQL'], ['skill-icons:mysql-dark', 'MySQL'], ['devicon:microsoftsqlserver', 'SQL Server'], ['devicon:oracle', 'Oracle']] },
   ],
