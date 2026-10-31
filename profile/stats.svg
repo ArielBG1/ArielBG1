@@ -13,7 +13,7 @@
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
-            fill: #70a5fd;
+            fill: #a397f7;
             animation: fadeInAnimation 0.8s ease-in-out forwards;
           }
           @supports(-moz-appearance: auto) {
@@ -22,7 +22,7 @@
           }
           
     .stat {
-      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #38bdae;
+      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #c9c9d9;
     }
     @supports(-moz-appearance: auto) {
       /* Selector detects Firefox */
@@ -33,7 +33,7 @@
       animation: fadeInAnimation 0.3s ease-in-out forwards;
     }
     .rank-text {
-      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #38bdae;
+      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9c9d9;
       animation: scaleInAnimation 0.3s ease-in-out forwards;
     }
     .rank-percentile-header {
@@ -46,18 +46,18 @@
     .not_bold { font-weight: 400 }
     .bold { font-weight: 700 }
     .icon {
-      fill: #bf91f3;
+      fill: #00b4d8;
       display: block;
     }
 
     .rank-circle-rim {
-      stroke: #70a5fd;
+      stroke: #a397f7;
       fill: none;
       stroke-width: 6;
       opacity: 0.2;
     }
     .rank-circle {
-      stroke: #70a5fd;
+      stroke: #a397f7;
       stroke-dasharray: 250;
       fill: none;
       stroke-width: 6;
@@ -77,7 +77,7 @@
         stroke-dashoffset: 251.33;
       }
       to {
-        stroke-dashoffset: 238.85;
+        stroke-dashoffset: 238.63;
       }
     }
   
@@ -137,12 +137,12 @@
           data-testid="card-bg"
           x="0.5"
           y="0.5"
-          rx="4.5"
+          rx="12.0"
           height="99%"
-          stroke="#e4e2e2"
+          stroke="#23233a"
           width="466"
-          fill="#1a1b27"
-          stroke-opacity="0.0"
+          fill="#13131f"
+          stroke-opacity="1.0"
         />
 
         
@@ -207,7 +207,7 @@
         x="269.01"
         y="12.5"
         data-testid="commits"
-      >45</text>
+      >53</text>
     </g>
   </g><g transform="translate(0, 50)">
     <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">

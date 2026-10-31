@@ -13,7 +13,7 @@
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
-            fill: #70a5fd;
+            fill: #a397f7;
             animation: fadeInAnimation 0.8s ease-in-out forwards;
           }
           @supports(-moz-appearance: auto) {
@@ -22,7 +22,7 @@
           }
           
     .lang-name {
-      font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #38bdae;
+      font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9c9d9;
     }
     .stagger {
       opacity: 0;
@@ -119,12 +119,12 @@
           data-testid="card-bg"
           x="0.5"
           y="0.5"
-          rx="4.5"
+          rx="12.0"
           height="99%"
-          stroke="#e4e2e2"
+          stroke="#23233a"
           width="299"
-          fill="#1a1b27"
-          stroke-opacity="0.0"
+          fill="#13131f"
+          stroke-opacity="1.0"
         />
 
         
@@ -160,7 +160,7 @@
           data-testid="lang-progress"
           x="0.00"
           y="0"
-          width="101.42"
+          width="96.55"
           height="8"
           fill="#f1e05a"
         />
@@ -168,9 +168,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="101.42"
+          x="96.55"
           y="0"
-          width="72.96"
+          width="59.23"
           height="8"
           fill="#e34c26"
         />
@@ -178,9 +178,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="174.38"
+          x="155.78"
           y="0"
-          width="62.10"
+          width="50.41"
           height="8"
           fill="#7355dd"
         />
@@ -188,31 +188,31 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="236.49"
+          x="206.19"
           y="0"
-          width="16.15"
+          width="20.08"
+          height="8"
+          fill="#ff5a03"
+        />
+      
+        <rect
+          mask="url(#rect-mask)"
+          data-testid="lang-progress"
+          x="226.27"
+          y="0"
+          width="16.30"
+          height="8"
+          fill="#3178c6"
+        />
+      
+        <rect
+          mask="url(#rect-mask)"
+          data-testid="lang-progress"
+          x="242.57"
+          y="0"
+          width="17.43"
           height="8"
           fill="#663399"
-        />
-      
-        <rect
-          mask="url(#rect-mask)"
-          data-testid="lang-progress"
-          x="242.63"
-          y="0"
-          width="14.19"
-          height="8"
-          fill="#3572A5"
-        />
-      
-        <rect
-          mask="url(#rect-mask)"
-          data-testid="lang-progress"
-          x="246.82"
-          y="0"
-          width="13.18"
-          height="8"
-          fill="#b07219"
         />
       
     
@@ -220,32 +220,32 @@
     <g transform="translate(0, 0)"><g transform="translate(0, 0)">
     <g class="stagger" style="animation-delay: 450ms">
       <circle cx="5" cy="6" r="5" fill="#f1e05a" />
-      <text data-testid="lang-name" x="15" y="10" class="lang-name">JavaScript 40.57%</text>
+      <text data-testid="lang-name" x="15" y="10" class="lang-name">JavaScript 38.62%</text>
     </g>
   </g><g transform="translate(0, 25)">
     <g class="stagger" style="animation-delay: 600ms">
       <circle cx="5" cy="6" r="5" fill="#e34c26" />
-      <text data-testid="lang-name" x="15" y="10" class="lang-name">HTML 29.19%</text>
+      <text data-testid="lang-name" x="15" y="10" class="lang-name">HTML 23.69%</text>
     </g>
   </g><g transform="translate(0, 50)">
     <g class="stagger" style="animation-delay: 750ms">
       <circle cx="5" cy="6" r="5" fill="#7355dd" />
-      <text data-testid="lang-name" x="15" y="10" class="lang-name">C# 24.84%</text>
+      <text data-testid="lang-name" x="15" y="10" class="lang-name">C# 20.16%</text>
     </g>
   </g></g><g transform="translate(150, 0)"><g transform="translate(0, 0)">
     <g class="stagger" style="animation-delay: 900ms">
-      <circle cx="5" cy="6" r="5" fill="#663399" />
-      <text data-testid="lang-name" x="15" y="10" class="lang-name">CSS 2.46%</text>
+      <circle cx="5" cy="6" r="5" fill="#ff5a03" />
+      <text data-testid="lang-name" x="15" y="10" class="lang-name">Astro 8.03%</text>
     </g>
   </g><g transform="translate(0, 25)">
     <g class="stagger" style="animation-delay: 1050ms">
-      <circle cx="5" cy="6" r="5" fill="#3572A5" />
-      <text data-testid="lang-name" x="15" y="10" class="lang-name">Python 1.67%</text>
+      <circle cx="5" cy="6" r="5" fill="#3178c6" />
+      <text data-testid="lang-name" x="15" y="10" class="lang-name">TypeScript 6.52%</text>
     </g>
   </g><g transform="translate(0, 50)">
     <g class="stagger" style="animation-delay: 1200ms">
-      <circle cx="5" cy="6" r="5" fill="#b07219" />
-      <text data-testid="lang-name" x="15" y="10" class="lang-name">Java 1.27%</text>
+      <circle cx="5" cy="6" r="5" fill="#663399" />
+      <text data-testid="lang-name" x="15" y="10" class="lang-name">CSS 2.97%</text>
     </g>
   </g></g>
   </g>
