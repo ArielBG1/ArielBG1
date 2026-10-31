@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="124" viewBox="0 0 880 124" role="img" aria-labelledby="t d">
+  <title id="t">ariel-bogado · lenguajes más usados</title>
+  <desc id="d">ArielBG1: lenguajes más usados en sus repositorios públicos. JavaScript 37,7 %, HTML 23,1 %, C# 19,7 %, Astro 7,8 %, TypeScript 6,4 %, CSS 2,9 %.</desc>
+  <defs><clipPath id="bar"><rect x="20" y="62" width="840" height="10" rx="5"/></clipPath></defs>
+  <style>
+    text { font-family: 'IBM Plex Mono','Fira Code',Consolas,Menlo,monospace; fill: #9a9ab0; font-size: 11px; }
+    .title { fill: #e6e6f0; font-size: 13px; font-weight: 600; }
+    .key { fill: #a397f7; font-size: 13px; font-weight: 600; }
+    .ku { fill: #9a9ab0; font-weight: 400; }
+    .name { fill: #e6e6f0; font-size: 11.5px; }
+    .name tspan { fill: #9a9ab0; }
+    .seg { transform-box: fill-box; transform-origin: 0 50%; animation: grow 0.8s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @media (prefers-reduced-motion: reduce) { .seg { animation: none; } }
+  </style>
+
+  <rect x="0.5" y="0.5" width="879" height="123" rx="12" fill="#0e0e19" stroke="#262640"/>
+  <path d="M0.5 40.5 V12.5 Q0.5 0.5 12.5 0.5 H867.5 Q879.5 0.5 879.5 12.5 V40.5 Z" fill="#151524"/>
+  <line x1="0" y1="40.5" x2="880" y2="40.5" stroke="#262640"/>
+  <text x="20" y="25" class="key">{ }</text>
+  <text x="46" y="25" class="title">ariel-bogado<tspan class="ku" dx="8">· lenguajes más usados</tspan></text>
+
+  <rect x="20" y="62" width="840" height="10" rx="5" fill="#2a2a42"/>
+  <g clip-path="url(#bar)"><rect class="seg" x="20.00" y="62" width="314.62" height="10" fill="#f1e05a" style="animation-delay:0ms"/><rect class="seg" x="336.62" y="62" width="192.22" height="10" fill="#e34c26" style="animation-delay:90ms"/><rect class="seg" x="530.84" y="62" width="163.31" height="10" fill="#7355dd" style="animation-delay:180ms"/><rect class="seg" x="696.14" y="62" width="63.85" height="10" fill="#ff5a03" style="animation-delay:270ms"/><rect class="seg" x="761.99" y="62" width="51.44" height="10" fill="#3178c6" style="animation-delay:360ms"/><rect class="seg" x="815.43" y="62" width="22.37" height="10" fill="#663399" style="animation-delay:450ms"/></g>
+  <circle cx="24.0" cy="99" r="4" fill="#f1e05a"/><text x="34.0" y="103" class="name">JavaScript<tspan dx="6">37,7 %</tspan></text><circle cx="164.0" cy="99" r="4" fill="#e34c26"/><text x="174.0" y="103" class="name">HTML<tspan dx="6">23,1 %</tspan></text><circle cx="304.0" cy="99" r="4" fill="#7355dd"/><text x="314.0" y="103" class="name">C#<tspan dx="6">19,7 %</tspan></text><circle cx="444.0" cy="99" r="4" fill="#ff5a03"/><text x="454.0" y="103" class="name">Astro<tspan dx="6">7,8 %</tspan></text><circle cx="584.0" cy="99" r="4" fill="#3178c6"/><text x="594.0" y="103" class="name">TypeScript<tspan dx="6">6,4 %</tspan></text><circle cx="724.0" cy="99" r="4" fill="#663399"/><text x="734.0" y="103" class="name">CSS<tspan dx="6">2,9 %</tspan></text>
+</svg>
